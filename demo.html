@@ -1,124 +1,161 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="generator"
-    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
-    <title>json editor</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <button type="button" id="save_all">save</button>
-    <div id="sat">
-    <h1 id="txt"></h1>
-    <button id="btn_id" onclick="add()">add</button> 
-    <button id="btn_id" onclick="dlt()">dlt</button>
-    <div style="margin-left: 2em" id="sat-ul">
-      <p id="pear"></p>
-    </div></div>
-    <script>
+
+<head>
+ <title> json editor</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+ </head>
+<body>
+<button type="button" id="save_all">save</button>
+<div id="sat">
+<h1 id="txt"></h1>
+<button id="btn_id" onclick="add()"> add </button>
+<button id="btn_id" onclick="dlt()"> dlt </button>
+<ul id="sat-ul">
+
+<p id="pear"> </p>
+  
+
+</ul>
+</div>
+
+
+<script>
    function add(){
   
     var temp ;
-        var len = document.getElementById(&quot;sat-ul&quot;).childNodes.length - 2; 
+	var len = document.getElementById("sat-ul").childNodes.length - 2; 
     
-        var ul = document.getElementById(&quot;sat-ul&quot;);
-        
-        var dlt_btn = document.createElement(&quot;button&quot;);
-        dlt_btn.innerHTML = &quot;X&quot;;
-        //console.log();
-        //dlt_btn.setAttribute(&quot;onclick&quot;,&quot;dlt_parent()&quot;);
-        
-        var form = document.createElement(&quot;form&quot;);
-        
-        var teacher_name = document.createElement(&quot;input&quot;);
-        teacher_name.type = &quot;text&quot;;
-        teacher_name.placeholder =&quot;tacher&quot;
-        teacher_name.className = &quot;demo&quot;; // set the CSS class
-        temp=&quot;sat-ul-teacher&quot;+len ;
-        teacher_name.setAttribute(&quot;id&quot;,temp);
-        //console.log(temp);
-        
-        var subject_name = document.createElement(&quot;input&quot;);
-        subject_name.type =&quot;text&quot; ;
-        subject_name.placeholder =&quot;subject &quot;
-    subject_name.className = &quot;demo&quot;;
-        temp=&quot;sat-ul-subject&quot;+len ;
-        subject_name.setAttribute(&quot;id&quot;,temp);
-        
-        
-        var course_code = document.createElement(&quot;input&quot;);
-        course_code.type =&quot;text&quot; ;
-        course_code.placeholder =&quot;course code &quot;
-    course_code.className = &quot;demo&quot;;     
-        temp =&quot;sat-ul-code&quot;+len ;
-        course_code.setAttribute(&quot;id&quot;,temp);
-        
-        var room_no = document.createElement(&quot;input&quot;);
-        room_no.type =&quot;text&quot; ;
-        room_no.placeholder =&quot;room no&quot;
-    room_no.className = &quot;demo&quot;; 
-        temp = &quot;sat-ul-room&quot;+len;
-        room_no.setAttribute(&quot;id&quot;,temp);
-        
-        var st_time = document.createElement(&quot;input&quot;);
-        st_time.type =&quot;text&quot; ;
-        st_time.placeholder =&quot;start time &quot;
-    st_time.className = &quot;demo&quot;; 
-        temp=&quot;sat-ul-start-time&quot;+len;
-        st_time.setAttribute(&quot;id&quot;,temp);
-        
-        
-        var end_time = document.createElement(&quot;input&quot;);
-        end_time.type =&quot;text&quot; ;
-        end_time.placeholder =&quot;end time&quot;
-    end_time.className = &quot;demo&quot;;
-        temp =&quot;sat-ul-end-time&quot;+len;
-        end_time.setAttribute(&quot;id&quot;,temp);
-        
-        var br = document.createElement(&quot;BR&quot;);
-        form.appendChild(dlt_btn);
-        form.appendChild(subject_name);
-        form.appendChild(course_code);
-        form.appendChild(teacher_name);
-        form.appendChild(st_time);
-        form.appendChild(end_time);
-        form.appendChild(room_no);
-        ul.appendChild(form);
-        
-        
+	var ul = document.getElementById("sat-ul");
+	
+	var dlt_btn = document.createElement("button");
+	dlt_btn.innerHTML = "X";
+	//console.log();
+	//dlt_btn.setAttribute("onclick","dlt_parent()");
+	
+	var form = document.createElement("form");
+	
+	var teacher_name = document.createElement("input");
+	teacher_name.type = "text";
+	teacher_name.placeholder ="tacher"
+	teacher_name.className = "demo"; // set the CSS class
+	temp="sat-ul-teacher"+len ;
+	teacher_name.setAttribute("id",temp);
+	//console.log(temp);
+	
+	var subject_name = document.createElement("input");
+	subject_name.type ="text" ;
+	subject_name.placeholder ="subject "
+    subject_name.className = "demo";
+	temp="sat-ul-subject"+len ;
+	subject_name.setAttribute("id",temp);
+	
+	
+	var course_code = document.createElement("input");
+	course_code.type ="text" ;
+	course_code.placeholder ="course code "
+    course_code.className = "demo";	
+	temp ="sat-ul-code"+len ;
+	course_code.setAttribute("id",temp);
+	
+	var room_no = document.createElement("input");
+	room_no.type ="text" ;
+	room_no.placeholder ="room no"
+    room_no.className = "demo";	
+	temp = "sat-ul-room"+len;
+	room_no.setAttribute("id",temp);
+	
+	var st_time = document.createElement("input");
+	st_time.type ="text" ;
+	st_time.placeholder ="start time "
+    st_time.className = "demo";	
+	temp="sat-ul-start-time"+len;
+	st_time.setAttribute("id",temp);
+	
+	
+	var end_time = document.createElement("input");
+	end_time.type ="text" ;
+	end_time.placeholder ="end time"
+    end_time.className = "demo";
+	temp ="sat-ul-end-time"+len;
+	end_time.setAttribute("id",temp);
+	
+	var br = document.createElement("BR");
+	form.appendChild(dlt_btn);
+	form.appendChild(subject_name);
+	form.appendChild(course_code);
+	form.appendChild(teacher_name);
+	form.appendChild(st_time);
+	form.appendChild(end_time);
+	form.appendChild(room_no);
+	ul.appendChild(form);
+	
+	
   }  
   function dlt(){
   
-   var list = document.getElementById(&quot;sat-ul&quot;);   // Get the &lt;ul&gt; element with id=&quot;myList&quot;
+   var list = document.getElementById("sat-ul");   // Get the <ul> element with id="myList"
    list.removeChild(list.childNodes[0]); 
   }
-  $(&quot;ul&quot;).on(&quot;click&quot;, &quot;button&quot;, function(e) {
+  $("ul").on("click", "button", function(e) {
     e.preventDefault();
     $(this).parent().remove();
-        return false ;
+	return false ;
 
  
-        
+	
 });
 
 
-          
-          $(&quot;#save_all&quot;).click(function(){
-                   var list = document.getElementById(&quot;sat-ul&quot;); 
-                 
-                   
-                   var temp ;
-                   //temp = &quot;teacher&quot;+2;
-                   //console.log(document.getElementById(temp).value);
-                   var len = list.childNodes.length - 3 ;
-                   console.log(&quot;len &quot; + len);
-                   for(var i = 0; i&lt;len;i++){
-                     console.log(&quot;i &quot;+i);
-                   }
-          });
-          
+	  
+	  $("#save_all").click(function(){
+		   var list = document.getElementById("sat-ul"); 
+		 
+		   
+		   var temp ;
+		   //temp = "teacher"+2;
+		   //console.log(document.getElementById(temp).value);
+		   var len = list.childNodes.length - 3 ;
+		   var nodes = list.childNodes ;
+		   //console.log("len " + len);
+		   var day = new Object();
+		   day.day_name = "sat";
+		   
+		   var period = new Array();
+		   for(var i= 1 ;i<=len ; i++){
+		      period.push(new Object());			
+		   }
+		   
+		   for(var i = 0 ; i<len ;  i++){
+		      period[i].period_no = i+1;
+			  var id = "sat-ul-teacher"+i ;
+			  period[i].tname = document.getElementById(id).value  ;
+			  period[i].subject_name = document.getElementById(id).value ;
+			  id = "sat-ul-code"+i ;
+			  period[i].ccode = document.getElementById(id).value ;
+			  id = "sat-ul-code"+i ;
+			  period[i].room_no = document.getElementById(id).value ;
+			  id = "sat-ul-start-time"+i ;
+			  period[i].time = document.getElementById(id).value ;
+		   }
+		   day.period = period ;
+		   
+		   var fnl = JSON.stringify(day);
+		   console.log(fnl);
+		   
+	  });
+	  
 </script>
-    <style>
+	  
+
+
+
+
+
+
+
+<style>
 .demo {
   padding:5px ;
 }
@@ -127,5 +164,6 @@
 
 
 </style>
-  </body>
+
+</body>
 </html>
