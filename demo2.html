@@ -1,0 +1,58 @@
+<html>
+
+<head>
+ <title> json editor</title>
+</head>
+<body>
+
+<h1 id="txt"></h1>
+<button id="btn_id" onclick="add()"> add </button>
+<ol id="ul_id">
+  
+
+</ul>
+
+
+
+<script>
+
+  function add(){
+  
+    console.log("clicked");
+	var ul = document.getElementById("ul_id");
+	
+	var teacher_name = document.createElement("input");
+	teacher_name.type = "text";
+	teacher_name.placeholder ="tacher"
+	teacher_name.className = "demo"; // set the CSS class
+	ul.appendChild(teacher_name);
+	
+	var subject_name = document.createElement("input");
+	subject_name.type ="text" ;
+	subject_name.placeholder ="subject "
+    subject_name.className = "demo";
+	ul.appendChild(subject_name);
+
+	
+	var br = document.createElement("BR");
+	ul.appendChild(br);
+	ul.appendChild(br);
+	ul.appendChild(br);
+	ul.appendChild(br);
+	
+	
+	
+	
+  }   
+
+</script>
+
+
+
+<style>
+
+
+</style>
+
+</body>
+</html>
