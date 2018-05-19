@@ -1,26 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
- <title> json editor</title>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
- 
- </head>
-<body>
-<button type="button" id="save_all">save</button>
-<div id="sat">
-<h1 id="txt"></h1>
-<button id="btn_id" onclick="add()"> add </button>
-<button id="btn_id" onclick="dlt()"> dlt </button>
-<ul id="ul_id">
-
-<p id="pear"> </p>
-  
-
-</ul>
-</div>
-
-
 <script>
    function add(){
   
@@ -106,17 +83,3 @@
 
 
 
-
-
-<style>
-.demo {
-  padding:5px ;
-}
-
-
-
-
-</style>
-
-</body>
-</html>
