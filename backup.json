@@ -1,0 +1,228 @@
+[
+
+    {
+        "dept_name":"ict",
+
+        "sem":[
+            {
+                "sem_no": "6"
+                ,"day":[
+                {
+                    "day_name":"sat",
+
+                    "period":[
+
+                        {
+                            "period_no":"1",
+                            "tname":"Kawser Ahmed ",
+                            "sub_name":"Digital Commuunication",
+                            "time":"12.00 to 12.50 ",
+                            "room_no":"202(A)",
+                            "ccode":"3203"
+
+                        }
+                        ,{
+                            "period_no":"2",
+                            "tname":"Ziaur Rahman",
+                            "sub_name":"",
+                            "time":"2.00 to 2.50",
+                            "room_no":"204",
+                            "ccode":"3200"
+
+                        },{
+                            "period_no":"3",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        },{
+                            "period_no":"4",
+                            "tname":"ANB",
+                            "sub_name":"not assigned",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        }
+
+
+                    ]
+
+                },{
+                    "day_name":"sun",
+
+                    "period":[
+
+                        {
+                            "period_no":"1",
+                            "tname":"ANB ",
+                            "sub_name":"",
+                            "time":"10.00 to 10.50 ",
+                            "room_no":"204",
+                            "ccode":"3205"
+
+                        }
+                        ,{
+                            "period_no":"2",
+                            "tname":"RM",
+                            "sub_name":"",
+                            "time":"2.00 to 2.50",
+                            "room_no":"202(b)",
+                            "ccode":"3204"
+
+                        },{
+                            "period_no":"3",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        },{
+                            "period_no":"4",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        }
+
+
+                    ]
+
+                },{
+                    "day_name":"mon",
+
+                    "period":[
+
+                        {
+                            "period_no":"1",
+                            "tname":"ANB ",
+                            "sub_name":"",
+                            "time":"10.00 to 10.50 ",
+                            "room_no":"204",
+                            "ccode":"3205"
+
+                        }
+                        ,{
+                            "period_no":"2",
+                            "tname":"RM",
+                            "sub_name":"",
+                            "time":"2.00 to 2.50",
+                            "room_no":"202(b)",
+                            "ccode":"3204"
+
+                        },{
+                            "period_no":"3",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        },{
+                            "period_no":"4",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        }
+
+
+                    ]
+
+                },{
+                    "day_name":"tue",
+
+                    "period":[
+
+                        {
+                            "period_no":"1",
+                            "tname":"ANB ",
+                            "sub_name":"",
+                            "time":"10.00 to 10.50 ",
+                            "room_no":"204",
+                            "ccode":"3205"
+
+                        }
+                        ,{
+                            "period_no":"2",
+                            "tname":"RM",
+                            "sub_name":"",
+                            "time":"2.00 to 2.50",
+                            "room_no":"202(b)",
+                            "ccode":"3204"
+
+                        },{
+                            "period_no":"3",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        },{
+                            "period_no":"4",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        }
+
+
+                    ]
+
+                },{
+                    "day_name":"wed",
+
+                    "period":[
+
+                        {
+                            "period_no":"1",
+                            "tname":"ANB ",
+                            "sub_name":"",
+                            "time":"10.00 to 10.50 ",
+                            "room_no":"204",
+                            "ccode":"3205"
+
+                        }
+                        ,{
+                            "period_no":"2",
+                            "tname":"RM",
+                            "sub_name":"",
+                            "time":"2.00 to 2.50",
+                            "room_no":"202(b)",
+                            "ccode":"3204"
+
+                        },{
+                            "period_no":"3",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        },{
+                            "period_no":"4",
+                            "tname":"ANB",
+                            "sub_name":"",
+                            "time":"3.00 to 4.50",
+                            "room_no":"3206"
+
+                        }
+
+
+                    ]
+
+                }
+
+            ]
+
+
+
+            }
+
+
+        ]
+
+    }
+
+]
