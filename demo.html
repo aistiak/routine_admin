@@ -10,7 +10,23 @@
  </head>
 <body>
 <p id="data"></p>
+<center>
 <button type="button" id="save_all">save</button>
+
+ <center>S  E M E S T E R<center> 
+ <select id="slect_sem">
+  <option value=""></option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+</select>
+ 
+
 
 <h1 style="margin-left:auto">S A T U R D A Y </h1>
 <div id="sat" class="bound-div">
@@ -29,7 +45,7 @@
 <ul id="sun-ul"></ul>
 </div>
 
-<h1>M O N D A Y </h1>
+<h1 style="style:center">M O N D A Y </h1>
 <div id="mon" class="bound-div">
 <h1 id="txt"></h1>
 <button  onclick="monadd()"> add </button>
@@ -55,10 +71,57 @@
 </div>
 
 
-
+</center>
 
 <script>
+      
+	  $("#slect_sem").change(function(){
+	  
+	       var selected_sem_no = $('#slect_sem').find(":selected").text();
+		  
+		   // todo 
+		   // from head we have to get the json and initialize the list of periods 
+		   $.get("http://localhost/routine_admin/php/handel.php",function(data, status){
+       
+			  
+			 var obj =JSON.parse(data);
+			 console.log(obj);
+			 
+			 
+			 var dept = new Object();
+			 
 
+             for(var i = 0 ; i<obj.length ; i++){
+			     if(obj[i].dept_name == "ict"){
+				   dept = obj[i]; // holding ict dept 
+				 }
+			 }
+			 
+			 // selecting semester
+			 var semester = dept.sem ;
+			 var days ; // to hold 5 days 
+			 for(var i = 0 ; i < semester.length ; i++){
+			     if(selected_sem_no == semester[i].sem_no){
+				   days = semester[i].day ;
+				 } 
+			 }
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+             
+             			 
+			 
+			 
+			 
+			 
+           });
+            		   
+		  
+	  });
       
 
 
@@ -221,12 +284,12 @@
 		   day[4].period = period ;
 		   
 		   var fnl = JSON.stringify(day);
-		   console.log(fnl);
+		   //console.log(fnl);
 		   
-		    $.get("http://localhost/routine_admin/php/handel.php", {js_string:fnl},function(data, status){
+		  //  $.get("http://localhost/routine_admin/php/handel.php", {js_string:fnl},function(data, status){
              // alert("Data: " + data + "\nStatus: " + status);
-			 $("#data")[0].innerHTML = data ;
-           });
+			// $("#data")[0].innerHTML = data ;
+          // });
 		   
 		   
 		   
