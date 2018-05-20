@@ -9,6 +9,7 @@
  
  </head>
 <body>
+<p id="data"></p>
 <button type="button" id="save_all">save</button>
 
 <h1 style="margin-left:auto">S A T U R D A Y </h1>
@@ -57,6 +58,10 @@
 
 
 <script>
+
+      
+
+
 	  $("#save_all").click(function(){
 		   var list = document.getElementById("sat-ul"); 
 		 
@@ -215,12 +220,15 @@
 		   }
 		   day[4].period = period ;
 		   
-		   
-		   
-		   
-		   
 		   var fnl = JSON.stringify(day);
 		   console.log(fnl);
+		   
+		    $.get("http://localhost/routine_admin/php/handel.php", {js_string:fnl},function(data, status){
+             // alert("Data: " + data + "\nStatus: " + status);
+			 $("#data")[0].innerHTML = data ;
+           });
+		   
+		   
 		   
 	  });
 	  
