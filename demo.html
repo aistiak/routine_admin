@@ -4,28 +4,67 @@
 <head>
  <title> json editor</title>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+ <script src="controll.js" type="text/javascript"></script> 
  
  </head>
 <body>
 <button type="button" id="save_all">save</button>
-<div id="sat">
+
+<h1 style="margin-left:auto">S A T U R D A Y </h1>
+<div id="sat" class="bound-div">
 <h1 id="txt"></h1>
-<button id="btn_id" onclick="add()"> add </button>
-<button id="btn_id" onclick="dlt()"> dlt </button>
-<ul id="sat-ul">
-
-<p id="pear"> </p>
-  
-
-</ul>
+<button id="btn_id" onclick="satadd()"> add </button>
+<button id="btn_id" onclick="satdlt()"> dlt </button>
+<ul id="sat-ul"></ul>
 </div>
 
 
+<h1>S U N D A Y </h1>
+<div id="sun" class="bound-div">
+<h1 id="txt"></h1>
+<button  onclick="sunadd()"> add </button>
+<button onclick="dlt()"> dlt </button>
+<ul id="sun-ul"></ul>
+</div>
+
+<h1>M O N D A Y </h1>
+<div id="mon" class="bound-div">
+<h1 id="txt"></h1>
+<button  onclick="monadd()"> add </button>
+<button onclick="dlt()"> dlt </button>
+<ul id="mon-ul"></ul>
+</div>
+
+<h1>T U E S D A Y </h1>
+<div id="tue" class="bound-div">
+<h1 id="txt"></h1>
+<button  onclick="tueadd()"> add </button>
+<button onclick="dlt()"> dlt </button>
+<ul id="tue-ul"></ul>
+</div>
+
+
+<h1>W E D N E S D A Y</h1>
+<div id="wed" class="bound-div">
+<h1 id="txt"></h1>
+<button  onclick="wedadd()"> add </button>
+<button onclick="dlt()"> dlt </button>
+<ul id="wed-ul"></ul>
+</div>
+
+
+
+
+
+
+ 
 <script>
-   function add(){
+   function satadd(){
   
     var temp ;
-	var len = document.getElementById("sat-ul").childNodes.length - 2; 
+	var len = document.getElementById("sat-ul").childNodes.length + 1 ; 
+	
     
 	var ul = document.getElementById("sat-ul");
 	
@@ -114,50 +153,398 @@
 		 
 		   
 		   var temp ;
-		   //temp = "teacher"+2;
-		   //console.log(document.getElementById(temp).value);
-		   var len = list.childNodes.length - 3 ;
+		   
+		   var len = list.childNodes.length  ;
 		   var nodes = list.childNodes ;
-		   //console.log("len " + len);
-		   var day = new Object();
-		   day.day_name = "sat";
+		
+		   var day = new Array();
+		   for(var i = 0 ; i< 5 ;i++){
+		       day.push(new Object());
+		   }
+		   
+		   day[0].day_name = "sat";
 		   
 		   var period = new Array();
 		   for(var i= 1 ;i<=len ; i++){
 		      period.push(new Object());			
 		   }
 		   
-		   for(var i = 0 ; i<len ;  i++){
-		      period[i].period_no = i+1;
+		   for(var i = 1 ; i<=len ;  i++){
+		      period[i-1].period_no = i  ;
 			  var id = "sat-ul-teacher"+i ;
-			  period[i].tname = document.getElementById(id).value  ;
-			  period[i].subject_name = document.getElementById(id).value ;
+			  period[i-1].tname = document.getElementById(id).value  ;
+			  id = "sat-ul-subject"+i;
+			  period[i-1].subject_name = document.getElementById(id).value ;
 			  id = "sat-ul-code"+i ;
-			  period[i].ccode = document.getElementById(id).value ;
+			  period[i-1].ccode = document.getElementById(id).value ;
 			  id = "sat-ul-code"+i ;
-			  period[i].room_no = document.getElementById(id).value ;
+			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "sat-ul-start-time"+i ;
-			  period[i].time = document.getElementById(id).value ;
+			  var temp ;
+			  temp = document.getElementById(id).value ;
+			  temp += " to " ;
+			  id = "sat-ul-end-time"+i;
+			  temp += document.getElementById(id).value;
+			  period[i-1].time = temp  ;
 		   }
-		   day.period = period ;
+		   day[0].period = period ;
+		   
+		   
+		   
+		   //sunday 
+		   len = document.getElementById("sun-ul").childNodes.length;
+		   console.log(len);
+		   day[1].day_name = "sun" ;
+		   var period = new Array();
+		   for(var i= 1 ;i<=len ; i++){
+		      period.push(new Object());			
+		   }
+		     
+		   for(var i = 1 ; i<=len ;  i++){
+		      period[i-1].period_no = i  ;
+			  var id = "sun-ul-teacher"+i ;
+			  period[i-1].tname = document.getElementById(id).value  ;
+			  id = "sun-ul-subject"+i;
+			  period[i-1].subject_name = document.getElementById(id).value ;
+			  id = "sun-ul-code"+i ;
+			  period[i-1].ccode = document.getElementById(id).value ;
+			  id = "sun-ul-code"+i ;
+			  period[i-1].room_no = document.getElementById(id).value ;
+			  id = "sun-ul-start-time"+i ;
+			  var temp ;
+			  temp = document.getElementById(id).value ;
+			  temp += " to " ;
+			  id = "sun-ul-end-time"+i;
+			  temp += document.getElementById(id).value;
+			  period[i-1].time = temp  ;
+		   }
+		   day[1].period = period ;
+		   
+		   // mon 
+		   len = document.getElementById("mon-ul").childNodes.length;
+		   console.log(len);
+		   day[2].day_name = "mon" ;
+		   var period = new Array();
+		   for(var i= 1 ;i<=len ; i++){
+		      period.push(new Object());			
+		   }
+		     
+		   for(var i = 1 ; i<=len ;  i++){
+		      period[i-1].period_no = i  ;
+			  var id = "mon-ul-teacher"+i ;
+			  period[i-1].tname = document.getElementById(id).value  ;
+			  id = "mon-ul-subject"+i;
+			  period[i-1].subject_name = document.getElementById(id).value ;
+			  id = "mon-ul-code"+i ;
+			  period[i-1].ccode = document.getElementById(id).value ;
+			  id = "mon-ul-code"+i ;
+			  period[i-1].room_no = document.getElementById(id).value ;
+			  id = "mon-ul-start-time"+i ;
+			  var temp ;
+			  temp = document.getElementById(id).value ;
+			  temp += " to " ;
+			  id = "mon-ul-end-time"+i;
+			  temp += document.getElementById(id).value;
+			  period[i-1].time = temp  ;
+		   }
+		   day[2].period = period ;
+		   
+		    // tue 
+		   len = document.getElementById("tue-ul").childNodes.length;
+		   console.log(len);
+		   day[3].day_name = "tue" ;
+		   var period = new Array();
+		   for(var i= 1 ;i<=len ; i++){
+		      period.push(new Object());			
+		   }
+		     
+		   for(var i = 1 ; i<=len ;  i++){
+		      period[i-1].period_no = i  ;
+			  var id = "tue-ul-teacher"+i ;
+			  period[i-1].tname = document.getElementById(id).value  ;
+			  id = "tue-ul-subject"+i;
+			  period[i-1].subject_name = document.getElementById(id).value ;
+			  id = "tue-ul-code"+i ;
+			  period[i-1].ccode = document.getElementById(id).value ;
+			  id = "tue-ul-code"+i ;
+			  period[i-1].room_no = document.getElementById(id).value ;
+			  id = "tue-ul-start-time"+i ;
+			  var temp ;
+			  temp = document.getElementById(id).value ;
+			  temp += " to " ;
+			  id = "tue-ul-end-time"+i;
+			  temp += document.getElementById(id).value;
+			  period[i-1].time = temp  ;
+		   }
+		   day[3].period = period ;
+		    // wed 
+		   len = document.getElementById("wed-ul").childNodes.length;
+		   console.log(len);
+		   day[4].day_name = "wed" ;
+		   var period = new Array();
+		   for(var i= 1 ;i<=len ; i++){
+		      period.push(new Object());			
+		   }
+		     
+		   for(var i = 1 ; i<=len ;  i++){
+		      period[i-1].period_no = i  ;
+			  var id = "wed-ul-teacher"+i ;
+			  period[i-1].tname = document.getElementById(id).value  ;
+			  id = "wed-ul-subject"+i;
+			  period[i-1].subject_name = document.getElementById(id).value ;
+			  id = "wed-ul-code"+i ;
+			  period[i-1].ccode = document.getElementById(id).value ;
+			  id = "wed-ul-code"+i ;
+			  period[i-1].room_no = document.getElementById(id).value ;
+			  id = "wed-ul-start-time"+i ;
+			  var temp ;
+			  temp = document.getElementById(id).value ;
+			  temp += " to " ;
+			  id = "wed-ul-end-time"+i;
+			  temp += document.getElementById(id).value;
+			  period[i-1].time = temp  ;
+		   }
+		   day[4].period = period ;
+		   
+		   
+		   
 		   
 		   var fnl = JSON.stringify(day);
 		   console.log(fnl);
 		   
 	  });
 	  
+	  
+	function sunadd(){
+  
+    var temp ;
+	var len = document.getElementById("sun-ul").childNodes.length + 1; 
+    
+	var ul = document.getElementById("sun-ul");
+	
+	var dlt_btn = document.createElement("button");
+	dlt_btn.innerHTML = "X";
+	//console.log();
+	//dlt_btn.setAttribute("onclick","dlt_parent()");
+	
+	var form = document.createElement("form");
+	
+	var teacher_name = document.createElement("input");
+	teacher_name.type = "text";
+	teacher_name.placeholder ="tacher"
+	teacher_name.className = "demo"; // set the CSS class
+	temp="sun-ul-teacher"+len ;
+	teacher_name.setAttribute("id",temp);
+	//console.log(temp);
+	
+	var subject_name = document.createElement("input");
+	subject_name.type ="text" ;
+	subject_name.placeholder ="subject "
+    subject_name.className = "demo";
+	temp="sun-ul-subject"+len ;
+	subject_name.setAttribute("id",temp);
+	
+	
+	var course_code = document.createElement("input");
+	course_code.type ="text" ;
+	course_code.placeholder ="course code "
+    course_code.className = "demo";	
+	temp ="sun-ul-code"+len ;
+	course_code.setAttribute("id",temp);
+	
+	var room_no = document.createElement("input");
+	room_no.type ="text" ;
+	room_no.placeholder ="room no"
+    room_no.className = "demo";	
+	temp = "sun-ul-room"+len;
+	room_no.setAttribute("id",temp);
+	
+	var st_time = document.createElement("input");
+	st_time.type ="text" ;
+	st_time.placeholder ="start time "
+    st_time.className = "demo";	
+	temp="sun-ul-start-time"+len;
+	st_time.setAttribute("id",temp);
+	
+	
+	var end_time = document.createElement("input");
+	end_time.type ="text" ;
+	end_time.placeholder ="end time"
+    end_time.className = "demo";
+	temp ="sun-ul-end-time"+len;
+	end_time.setAttribute("id",temp);
+	
+	var br = document.createElement("BR");
+	form.appendChild(dlt_btn);
+	form.appendChild(subject_name);
+	form.appendChild(course_code);
+	form.appendChild(teacher_name);
+	form.appendChild(st_time);
+	form.appendChild(end_time);
+	form.appendChild(room_no);
+	ul.appendChild(form);
+	
+	
+  }  
+  	  
+	function monadd(){
+  
+    var temp ;
+	var len = document.getElementById("mon-ul").childNodes.length + 1; 
+    
+	var ul = document.getElementById("mon-ul");
+	
+	var dlt_btn = document.createElement("button");
+	dlt_btn.innerHTML = "X";
+	//console.log();
+	//dlt_btn.setAttribute("onclick","dlt_parent()");
+	
+	var form = document.createElement("form");
+	
+	var teacher_name = document.createElement("input");
+	teacher_name.type = "text";
+	teacher_name.placeholder ="tacher"
+	teacher_name.className = "demo"; // set the CSS class
+	temp="mon-ul-teacher"+len ;
+	teacher_name.setAttribute("id",temp);
+	//console.log(temp);
+	
+	var subject_name = document.createElement("input");
+	subject_name.type ="text" ;
+	subject_name.placeholder ="subject "
+    subject_name.className = "demo";
+	temp="mon-ul-subject"+len ;
+	subject_name.setAttribute("id",temp);
+	
+	
+	var course_code = document.createElement("input");
+	course_code.type ="text" ;
+	course_code.placeholder ="course code "
+    course_code.className = "demo";	
+	temp ="mon-ul-code"+len ;
+	course_code.setAttribute("id",temp);
+	
+	var room_no = document.createElement("input");
+	room_no.type ="text" ;
+	room_no.placeholder ="room no"
+    room_no.className = "demo";	
+	temp = "mon-ul-room"+len;
+	room_no.setAttribute("id",temp);
+	
+	var st_time = document.createElement("input");
+	st_time.type ="text" ;
+	st_time.placeholder ="start time "
+    st_time.className = "demo";	
+	temp="mon-ul-start-time"+len;
+	st_time.setAttribute("id",temp);
+	
+	
+	var end_time = document.createElement("input");
+	end_time.type ="text" ;
+	end_time.placeholder ="end time"
+    end_time.className = "demo";
+	temp ="mon-ul-end-time"+len;
+	end_time.setAttribute("id",temp);
+	
+	var br = document.createElement("BR");
+	form.appendChild(dlt_btn);
+	form.appendChild(subject_name);
+	form.appendChild(course_code);
+	form.appendChild(teacher_name);
+	form.appendChild(st_time);
+	form.appendChild(end_time);
+	form.appendChild(room_no);
+	ul.appendChild(form);
+	
+	
+  }  
+	  
+    
+	
+function wedadd(){
+  
+    var temp ;
+	var len = document.getElementById("wed-ul").childNodes.length + 1; 
+    
+	var ul = document.getElementById("wed-ul");
+	
+	var dlt_btn = document.createElement("button");
+	dlt_btn.innerHTML = "X";
+	//console.log();
+	//dlt_btn.setAttribute("onclick","dlt_parent()");
+	
+	var form = document.createElement("form");
+	
+	var teacher_name = document.createElement("input");
+	teacher_name.type = "text";
+	teacher_name.placeholder ="tacher"
+	teacher_name.className = "demo"; // set the CSS class
+	temp="wed-ul-teacher"+len ;
+	teacher_name.setAttribute("id",temp);
+	//console.log(temp);
+	
+	var subject_name = document.createElement("input");
+	subject_name.type ="text" ;
+	subject_name.placeholder ="subject "
+    subject_name.className = "demo";
+	temp="wed-ul-subject"+len ;
+	subject_name.setAttribute("id",temp);
+	
+	
+	var course_code = document.createElement("input");
+	course_code.type ="text" ;
+	course_code.placeholder ="course code "
+    course_code.className = "demo";	
+	temp ="wed-ul-code"+len ;
+	course_code.setAttribute("id",temp);
+	
+	var room_no = document.createElement("input");
+	room_no.type ="text" ;
+	room_no.placeholder ="room no"
+    room_no.className = "demo";	
+	temp = "wed-ul-room"+len;
+	room_no.setAttribute("id",temp);
+	
+	var st_time = document.createElement("input");
+	st_time.type ="text" ;
+	st_time.placeholder ="start time "
+    st_time.className = "demo";	
+	temp="wed-ul-start-time"+len;
+	st_time.setAttribute("id",temp);
+	
+	
+	var end_time = document.createElement("input");
+	end_time.type ="text" ;
+	end_time.placeholder ="end time"
+    end_time.className = "demo";
+	temp ="wed-ul-end-time"+len;
+	end_time.setAttribute("id",temp);
+	
+	var br = document.createElement("BR");
+	form.appendChild(dlt_btn);
+	form.appendChild(subject_name);
+	form.appendChild(course_code);
+	form.appendChild(teacher_name);
+	form.appendChild(st_time);
+	form.appendChild(end_time);
+	form.appendChild(room_no);
+	ul.appendChild(form);
+	
+	
+  }  		
+	  
 </script>
 	  
-
-
-
-
-
 
 
 <style>
 .demo {
   padding:5px ;
+}
+
+.bound-div{
+   min-width: 1200px; 
+   margin: 0 auto;
 }
 
 
