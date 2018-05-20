@@ -1,11 +1,16 @@
-    
-	
-function tueadd(){
-  
-    var temp ;
-	var len = document.getElementById("tue-ul").childNodes.length + 1; 
-    
-	var ul = document.getElementById("tue-ul");
+	 var list = document.getElementById(day_id); 
+			 console.log("len :" + list.childNodes.length);
+			 document.getElementById(day_id).empty();
+			 //$('#sat-ul').empty(); // clearing the previous list <li> 
+			// var len = list.childNodes.length ;
+			// if(len>0) return ;
+			 var periods = days[0].period ; // periods of sat
+			 console.log(periods);
+			 
+			 for(var i = 1 ; i<=periods.length ; i++){
+			   
+			                  
+	var ul = document.getElementById(day_id);
 	
 	var dlt_btn = document.createElement("button");
 	dlt_btn.innerHTML = "X";
@@ -18,46 +23,56 @@ function tueadd(){
 	teacher_name.type = "text";
 	teacher_name.placeholder ="tacher"
 	teacher_name.className = "demo"; // set the CSS class
-	temp="tue-ul-teacher"+len ;
+	temp=day_id+"-teacher"+i ;
 	teacher_name.setAttribute("id",temp);
+	teacher_name.value = periods[i-1].tname;	
 	//console.log(temp);
 	
 	var subject_name = document.createElement("input");
 	subject_name.type ="text" ;
 	subject_name.placeholder ="subject "
     subject_name.className = "demo";
-	temp="tue-ul-subject"+len ;
+	temp=day_id+"-subject"+i ;
 	subject_name.setAttribute("id",temp);
+	subject_name.value = periods[i-1].sub_name ;
+	
 	
 	
 	var course_code = document.createElement("input");
 	course_code.type ="text" ;
 	course_code.placeholder ="course code "
     course_code.className = "demo";	
-	temp ="tue-ul-code"+len ;
+	temp =day_id+"-code"+i ;
 	course_code.setAttribute("id",temp);
+	course_code.value = periods[i-1].ccode ;
 	
 	var room_no = document.createElement("input");
 	room_no.type ="text" ;
 	room_no.placeholder ="room no"
     room_no.className = "demo";	
-	temp = "tue-ul-room"+len;
+	temp = day_id+"-room"+i;
 	room_no.setAttribute("id",temp);
+	room_no.value = periods[i-1].room_no ;
 	
 	var st_time = document.createElement("input");
 	st_time.type ="text" ;
 	st_time.placeholder ="start time "
     st_time.className = "demo";	
-	temp="tue-ul-start-time"+len;
+	temp=day_id+"-start-time"+i;
 	st_time.setAttribute("id",temp);
+	st_time.value = getStartTime(periods[i-1].time);
+	//console.log("start time :" + getStartTime(periods[i-1].time));
+	
 	
 	
 	var end_time = document.createElement("input");
 	end_time.type ="text" ;
 	end_time.placeholder ="end time"
     end_time.className = "demo";
-	temp ="tue-ul-end-time"+len;
+	temp =day_id+"-end-time"+i;
 	end_time.setAttribute("id",temp);
+	end_time.value = getEndTime(periods[i-1].time);
+	//console.log("end time :" + reverseString("12.00"));
 	
 	var br = document.createElement("BR");
 	form.appendChild(dlt_btn);
@@ -68,7 +83,3 @@ function tueadd(){
 	form.appendChild(end_time);
 	form.appendChild(room_no);
 	ul.appendChild(form);
-	
-	
-  }  		
-	
