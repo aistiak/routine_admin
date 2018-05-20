@@ -1,10 +1,11 @@
-	  
-	function monadd(){
+    
+	
+function wedadd(){
   
     var temp ;
-	var len = document.getElementById("mon-ul").childNodes.length ; 
+	var len = document.getElementById("wed-ul").childNodes.length + 1; 
     
-	var ul = document.getElementById("mon-ul");
+	var ul = document.getElementById("wed-ul");
 	
 	var dlt_btn = document.createElement("button");
 	dlt_btn.innerHTML = "X";
@@ -17,7 +18,7 @@
 	teacher_name.type = "text";
 	teacher_name.placeholder ="tacher"
 	teacher_name.className = "demo"; // set the CSS class
-	temp="mon-ul-teacher"+len ;
+	temp="wed-ul-teacher"+len ;
 	teacher_name.setAttribute("id",temp);
 	//console.log(temp);
 	
@@ -25,7 +26,7 @@
 	subject_name.type ="text" ;
 	subject_name.placeholder ="subject "
     subject_name.className = "demo";
-	temp="mon-ul-subject"+len ;
+	temp="wed-ul-subject"+len ;
 	subject_name.setAttribute("id",temp);
 	
 	
@@ -33,21 +34,21 @@
 	course_code.type ="text" ;
 	course_code.placeholder ="course code "
     course_code.className = "demo";	
-	temp ="mon-ul-code"+len ;
+	temp ="wed-ul-code"+len ;
 	course_code.setAttribute("id",temp);
 	
 	var room_no = document.createElement("input");
 	room_no.type ="text" ;
 	room_no.placeholder ="room no"
     room_no.className = "demo";	
-	temp = "mon-ul-room"+len;
+	temp = "wed-ul-room"+len;
 	room_no.setAttribute("id",temp);
 	
 	var st_time = document.createElement("input");
 	st_time.type ="text" ;
 	st_time.placeholder ="start time "
     st_time.className = "demo";	
-	temp="mon-ul-start-time"+len;
+	temp="wed-ul-start-time"+len;
 	st_time.setAttribute("id",temp);
 	
 	
@@ -55,7 +56,7 @@
 	end_time.type ="text" ;
 	end_time.placeholder ="end time"
     end_time.className = "demo";
-	temp ="mon-ul-end-time"+len;
+	temp ="wed-ul-end-time"+len;
 	end_time.setAttribute("id",temp);
 	
 	var br = document.createElement("BR");
@@ -69,4 +70,5 @@
 	ul.appendChild(form);
 	
 	
-  }  
+  }  		
+	
