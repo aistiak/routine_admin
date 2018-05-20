@@ -1,11 +1,11 @@
     
 	
-function wedadd(){
+function tueadd(){
   
     var temp ;
-	var len = document.getElementById("wed-ul").childNodes.length + 1; 
+	var len = document.getElementById("tue-ul").childNodes.length + 1; 
     
-	var ul = document.getElementById("wed-ul");
+	var ul = document.getElementById("tue-ul");
 	
 	var dlt_btn = document.createElement("button");
 	dlt_btn.innerHTML = "X";
@@ -18,7 +18,7 @@ function wedadd(){
 	teacher_name.type = "text";
 	teacher_name.placeholder ="tacher"
 	teacher_name.className = "demo"; // set the CSS class
-	temp="wed-ul-teacher"+len ;
+	temp="tue-ul-teacher"+len ;
 	teacher_name.setAttribute("id",temp);
 	//console.log(temp);
 	
@@ -26,7 +26,7 @@ function wedadd(){
 	subject_name.type ="text" ;
 	subject_name.placeholder ="subject "
     subject_name.className = "demo";
-	temp="wed-ul-subject"+len ;
+	temp="tue-ul-subject"+len ;
 	subject_name.setAttribute("id",temp);
 	
 	
@@ -34,21 +34,21 @@ function wedadd(){
 	course_code.type ="text" ;
 	course_code.placeholder ="course code "
     course_code.className = "demo";	
-	temp ="wed-ul-code"+len ;
+	temp ="tue-ul-code"+len ;
 	course_code.setAttribute("id",temp);
 	
 	var room_no = document.createElement("input");
 	room_no.type ="text" ;
 	room_no.placeholder ="room no"
     room_no.className = "demo";	
-	temp = "wed-ul-room"+len;
+	temp = "tue-ul-room"+len;
 	room_no.setAttribute("id",temp);
 	
 	var st_time = document.createElement("input");
 	st_time.type ="text" ;
 	st_time.placeholder ="start time "
     st_time.className = "demo";	
-	temp="wed-ul-start-time"+len;
+	temp="tue-ul-start-time"+len;
 	st_time.setAttribute("id",temp);
 	
 	
@@ -56,7 +56,7 @@ function wedadd(){
 	end_time.type ="text" ;
 	end_time.placeholder ="end time"
     end_time.className = "demo";
-	temp ="wed-ul-end-time"+len;
+	temp ="tue-ul-end-time"+len;
 	end_time.setAttribute("id",temp);
 	
 	var br = document.createElement("BR");
