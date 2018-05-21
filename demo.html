@@ -300,15 +300,16 @@
 		      period.push(new Object());			
 		   }
 		   
+		   // assigning id`s 
 		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()  ;
 			  var id = "sat-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "sat-ul-subject"+i;
-			  period[i-1].subject_name = document.getElementById(id).value ;
+			  id = "sat-ul-subject"+i; //arif
+			  period[i-1].sub_name = document.getElementById(id).value ;
 			  id = "sat-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "sat-ul-code"+i ;
+			  id = "sat-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "sat-ul-start-time"+i ;
 			  var temp ;
@@ -336,10 +337,10 @@
 			  var id = "sun-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
 			  id = "sun-ul-subject"+i;
-			  period[i-1].subject_name = document.getElementById(id).value ;
+			  period[i-1].sub_name = document.getElementById(id).value ;
 			  id = "sun-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "sun-ul-code"+i ;
+			  id = "sun-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "sun-ul-start-time"+i ;
 			  var temp ;
@@ -365,10 +366,10 @@
 			  var id = "mon-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
 			  id = "mon-ul-subject"+i;
-			  period[i-1].subject_name = document.getElementById(id).value ;
+			  period[i-1].sub_name = document.getElementById(id).value ;
 			  id = "mon-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "mon-ul-code"+i ;
+			  id = "mon-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "mon-ul-start-time"+i ;
 			  var temp ;
@@ -394,10 +395,10 @@
 			  var id = "tue-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
 			  id = "tue-ul-subject"+i;
-			  period[i-1].subject_name = document.getElementById(id).value ;
+			  period[i-1].sub_name = document.getElementById(id).value ;
 			  id = "tue-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "tue-ul-code"+i ;
+			  id = "tue-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "tue-ul-start-time"+i ;
 			  var temp ;
@@ -422,10 +423,10 @@
 			  var id = "wed-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
 			  id = "wed-ul-subject"+i;
-			  period[i-1].subject_name = document.getElementById(id).value ;
+			  period[i-1].sub_name = document.getElementById(id).value ;
 			  id = "wed-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "wed-ul-code"+i ;
+			  id = "wed-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
 			  id = "wed-ul-start-time"+i ;
 			  var temp ;
@@ -485,7 +486,7 @@
 		   
             });
 		   
-		   
+		   console.log(obj);
 		   
 	  });
 	  
