@@ -1,6 +1,7 @@
+<?php
+
 <!DOCTYPE html>
 <html>
-
 
 <head>
  <title> json editor</title>
@@ -10,19 +11,6 @@
  
  </head>
 <body>
-<div id="login">
-
-  <center>
-    <input id="user" type="text"class ="login-comp" /><br>
-	<input id="pass" type="password" class="login-comp" /><br>
-	<button id="login-btn"> login </button>
-    
-  </center>
-  <center> 
-   
-  </center>
-</div>
-<div id="main">
 <p id="data"></p>
 <center>
 <button type="button" id="save_all">save</button>
@@ -86,47 +74,7 @@
 
 
 </center>
-</div>
 
-<script>
- $("#main").hide();
-
- //document.getElementById("user").placeholder = "user" ;
- var user =  $("#user").attr("placeholder","user");
- var pass = $("#pass").attr("placeholder","password");
- 
- $("#login-btn").click(function(){
- 
-     
- 
- });
- 
-
-</script>
-<style>
-
-#login{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-
-}
-.login-comp{
-  width:200px;height:25px
-
-}
-
-#login-btn {
-  
-  height:25px ;
-  width:100px ;
-  margin-top:10px
-  
-}
-
-</style>
 <script>
       
 	  $("#slect_sem").change(function(){
@@ -957,3 +905,7 @@ function wedadd(){
 
 </body>
 </html>
+
+
+
+?>
