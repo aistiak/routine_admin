@@ -91,8 +91,8 @@
 </div>
 
 <script>
- var id_idx = [] ;
- id_idx[0] = 0 ;
+ var id_idx = []; 	
+  id_idx[0] = 0;
  $("#main").hide();
 
  //document.getElementById("user").placeholder = "user" ;
@@ -105,7 +105,7 @@
   
    var user_val = user.val();
    var pass_val = pass.val();
-   $.post("http://localhost/routine_admin/php/login.php",{user:user_val,pass:pass_val},function(data, status){
+   $.post("http://istiak.net/mbstu_routine/login.php",{user:user_val,pass:pass_val},function(data, status){
    			     console.log("data :" + data);
    			     console.log("user_val :" + user_val);
 				 if(data == user_val && data != ""){
@@ -159,7 +159,7 @@
 		  
 		   // todo 
 		   // from head we have to get the json and initialize the list of periods 
-		   $.get("http://localhost/routine_admin/php/handel.php",function(data, status){
+		   $.get("http://istiak.net/mbstu_routine/handel.php",function(data, status){
        
 			 $('#sat-ul').empty(); // clearing the previous list <li> 
 			 $('#sun-ul').empty(); // clearing the previous list <li> 
@@ -233,7 +233,7 @@
 			 
 for(var i = 1 ; i<=periods.length ; i++){
 			   
-   id_idx[i] = i ;			                   
+    id_idx[i] = i ;			                  
 	var ul = document.getElementById(day_id);
 	
 	var dlt_btn = document.createElement("button");
@@ -353,8 +353,8 @@ for(var i = 1 ; i<=periods.length ; i++){
 		 return rs ;
 	  }
       
- 
-      // save all 
+
+
 	  $("#save_all").click(function(){
 		   var list = document.getElementById("sat-ul"); 
 		 
@@ -378,33 +378,23 @@ for(var i = 1 ; i<=periods.length ; i++){
 		   }
 		   
 		   // assigning id`s 
-		   for(var idx = 1 , i = 1 ; i<=len ;  idx++){
-
-			 // problem hear  
-			  
-              try{
+		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()  ;
-			  var id = "sat-ul-teacher"+idx ;
+			  var id = "sat-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "sat-ul-subject"+idx; //arif
+			  id = "sat-ul-subject"+i; //arif
 			  period[i-1].sub_name = document.getElementById(id).value ;
-			  id = "sat-ul-code"+idx ;
+			  id = "sat-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "sat-ul-room"+idx ;
+			  id = "sat-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
-			  id = "sat-ul-start-time"+idx ;
+			  id = "sat-ul-start-time"+i ;
 			  var temp ;
 			  temp = document.getElementById(id).value ;
 			  temp += " to " ;
-			  id = "sat-ul-end-time"+idx;
+			  id = "sat-ul-end-time"+i;
 			  temp += document.getElementById(id).value;
 			  period[i-1].time = temp  ;
-			  i++;
-             }catch(err){
-               
-                console.log("error : " + err ) ;
-			 }
-
 		   }
 		   day[0].period = period ;
 		   
@@ -419,30 +409,23 @@ for(var i = 1 ; i<=periods.length ; i++){
 		      period.push(new Object());			
 		   }
 		     
-		   for(var idx = 1 , i = 1; i<=len ;  idx++){
-
-			  try{ 
+		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()   ;
-			  var id = "sun-ul-teacher"+idx ;
+			  var id = "sun-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "sun-ul-subject"+idx;
+			  id = "sun-ul-subject"+i;
 			  period[i-1].sub_name = document.getElementById(id).value ;
-			  id = "sun-ul-code"+idx ;
+			  id = "sun-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "sun-ul-room"+idx ;
+			  id = "sun-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
-			  id = "sun-ul-start-time"+idx ;
+			  id = "sun-ul-start-time"+i ;
 			  var temp ;
 			  temp = document.getElementById(id).value ;
 			  temp += " to " ;
-			  id = "sun-ul-end-time"+idx;
+			  id = "sun-ul-end-time"+i;
 			  temp += document.getElementById(id).value;
 			  period[i-1].time = temp  ;
-			  i++;
-			  }catch(err){
- 
-                   console.log("error : "  + err) ;
-			  }
 		   }
 		   day[1].period = period ;
 		   
@@ -455,31 +438,23 @@ for(var i = 1 ; i<=periods.length ; i++){
 		      period.push(new Object());			
 		   }
 		     
-		   for(var idx = 1 , i = 1; i<=len ;  idx++){
-
-              try{
+		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()   ;
-			  var id = "mon-ul-teacher"+idx ;
+			  var id = "mon-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "mon-ul-subject"+idx;
+			  id = "mon-ul-subject"+i;
 			  period[i-1].sub_name = document.getElementById(id).value ;
-			  id = "mon-ul-code"+idx ;
+			  id = "mon-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "mon-ul-room"+idx ;
+			  id = "mon-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
-			  id = "mon-ul-start-time"+idx ;
+			  id = "mon-ul-start-time"+i ;
 			  var temp ;
 			  temp = document.getElementById(id).value ;
 			  temp += " to " ;
-			  id = "mon-ul-end-time"+idx;
+			  id = "mon-ul-end-time"+i;
 			  temp += document.getElementById(id).value;
 			  period[i-1].time = temp  ;
-			  i++;
-			  }catch(err){
-                console.log("error : " + err );
-
-			  }
-		   
 		   }
 		   day[2].period = period ;
 		   
@@ -492,29 +467,23 @@ for(var i = 1 ; i<=periods.length ; i++){
 		      period.push(new Object());			
 		   }
 		     
-		   for(var idx = 1 , i = 1; i<=len ;  idx++){
-
-			  try{ 
+		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()   ;
-			  var id = "tue-ul-teacher"+idx ;
+			  var id = "tue-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "tue-ul-subject"+idx;
+			  id = "tue-ul-subject"+i;
 			  period[i-1].sub_name = document.getElementById(id).value ;
-			  id = "tue-ul-code"+idx ;
+			  id = "tue-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "tue-ul-room"+idx ;
+			  id = "tue-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
-			  id = "tue-ul-start-time"+idx ;
+			  id = "tue-ul-start-time"+i ;
 			  var temp ;
 			  temp = document.getElementById(id).value ;
 			  temp += " to " ;
-			  id = "tue-ul-end-time"+idx;
+			  id = "tue-ul-end-time"+i;
 			  temp += document.getElementById(id).value;
 			  period[i-1].time = temp  ;
-			   i++ ;
-			  }catch(err){
-                console.log("error : " + err );
-			  }
 		   }
 		   day[3].period = period ;
 		    // wed 
@@ -526,29 +495,23 @@ for(var i = 1 ; i<=periods.length ; i++){
 		      period.push(new Object());			
 		   }
 		     
-		   for(var idx = 1 , i = 1; i<=len ;  idx++){
-
-			  try{ 
+		   for(var i = 1 ; i<=len ;  i++){
 		      period[i-1].period_no = i.toString()   ;
-			  var id = "wed-ul-teacher"+idx ;
+			  var id = "wed-ul-teacher"+i ;
 			  period[i-1].tname = document.getElementById(id).value  ;
-			  id = "wed-ul-subject"+idx;
+			  id = "wed-ul-subject"+i;
 			  period[i-1].sub_name = document.getElementById(id).value ;
-			  id = "wed-ul-code"+idx ;
+			  id = "wed-ul-code"+i ;
 			  period[i-1].ccode = document.getElementById(id).value ;
-			  id = "wed-ul-room"+idx ;
+			  id = "wed-ul-room"+i ;
 			  period[i-1].room_no = document.getElementById(id).value ;
-			  id = "wed-ul-start-time"+idx ;
+			  id = "wed-ul-start-time"+i ;
 			  var temp ;
 			  temp = document.getElementById(id).value ;
 			  temp += " to " ;
-			  id = "wed-ul-end-time"+idx;
+			  id = "wed-ul-end-time"+i;
 			  temp += document.getElementById(id).value;
 			  period[i-1].time = temp  ;
-		      i++;
-			  }catch(err){
-				  console.log("error : "+ err) ;
-			  }
 		   }
 		   day[4].period = period ;
 		   var selected_sem_no = $('#slect_sem').find(":selected").text();
@@ -557,7 +520,7 @@ for(var i = 1 ; i<=periods.length ; i++){
 		   var fnl = JSON.stringify(sem);
 		   console.log(fnl);
 		   
-		    $.get("http://localhost/routine_admin/php/handel.php",function(data, status){
+		    $.get("http://istiak.net/mbstu_routine/handel.php",function(data, status){
              // alert("Data: " + data + "\nStatus: " + status);
 		     // $("#data")[0].innerHTML = data ;
 		     var obj = JSON.parse(data);
@@ -589,7 +552,7 @@ for(var i = 1 ; i<=periods.length ; i++){
 			 
 			 str = JSON.stringify(obj);
 			 console.log(obj);
-			  $.post("http://localhost/routine_admin/php/save.php",{js_string:str},function(data, status){
+			  $.post("http://istiak.net/mbstu_routine/save.php",{js_string:str},function(data, status){
 			     console.log("response : " + data );
 			  });
 			 
@@ -680,16 +643,17 @@ for(var i = 1 ; i<=periods.length ; i++){
 	ul.appendChild(form);
 	
 	
-  }  
-  // delete button listener 
+  }
+  // delete button listener   
   function dlt(){
   
    var list = document.getElementById("sat-ul");   // Get the <ul> element with id="myList"
    list.removeChild(list.childNodes[0]); 
   }
-  $("ul").on("click", "button", function(e) {
+  $("ul").on("click", "button", function(e) { // all the dlt button 
     e.preventDefault();
 	var idx = $(this).parent().index();
+	console.log("deleted index : " + idx);
     $(this).parent().remove();
 	return false ;
 
