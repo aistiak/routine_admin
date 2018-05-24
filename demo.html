@@ -4,12 +4,13 @@
 
 <head>
  <title> json editor</title>
+ <link href="mbstu.ico" rel="shortcut icon" />
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
  <script src="controll.js" type="text/javascript"></script> 
  
  </head>
-<body>
+<body >
 <div id="login">
 
   <center>
@@ -90,6 +91,18 @@
 </center>
 </div>
 
+<style>
+body {
+
+	background-image: url("bk1.gif");
+	
+	
+	
+}
+
+
+</style>
+
 <script>
  var id_idx = [] ;
  id_idx[0] = 0 ;
@@ -151,9 +164,13 @@
 
 </style>
 <script>
-      
+      $("#slect_sem").hover(function(){
+
+		 saveAll();
+	  }); 
 	  $("#slect_sem").change(function(){
 	  
+	       //saveAll(); // saving previous sate 
 	       var selected_sem_no = $('#slect_sem').find(":selected").text();
 		   
 		  
@@ -355,7 +372,10 @@ for(var i = 1 ; i<=periods.length ; i++){
       
  
       // save all 
-	  $("#save_all").click(function(){
+	  $("#save_all").click(saveAll());
+	  
+	  function saveAll(){
+		  console.log("iside save all ");
 		   var list = document.getElementById("sat-ul"); 
 		 
 		   
@@ -602,8 +622,7 @@ for(var i = 1 ; i<=periods.length ; i++){
 		   
 		   console.log(obj);
 		   
-	  });
-	  
+	  }
 
 </script>
 
