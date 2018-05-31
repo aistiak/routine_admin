@@ -1,0 +1,58 @@
+.demo {
+    padding: 5px;
+}
+
+.bound-div {
+    min-width: 1200px;
+    margin: 0 auto;
+}
+
+#status {
+    position: relative;
+}
+
+#status {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+}
+
+#live_hint {
+    position: relative;
+}
+
+#live_hint {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+body {
+
+    background-image: url("");
+}
+
+#login {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
+.login-comp {
+    width: 200px;
+    height: 25px
+}
+
+#login-btn {
+
+    height: 25px;
+    width: 100px;
+    margin-top: 10px
+}
+
+#warn {
+
+    color: red
+}

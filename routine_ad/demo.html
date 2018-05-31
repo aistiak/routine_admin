@@ -106,7 +106,7 @@
 	
 	var user_val = user.val();
 	var pass_val = pass.val();
-	$.post("http://istiak.net/mbstu_routine/login.php",{user:user_val,pass:pass_val},function(data, status){
+	$.post("http://istiak.net/mbstu_routine/php/login.php",{user:user_val,pass:pass_val},function(data, status){
 					console.log("data :" + data);
 					console.log("user_val :" + user_val);
 					if(data == user_val && data != ""){
