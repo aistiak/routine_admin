@@ -8,6 +8,12 @@ function satadd() {
 
     var dlt_btn = document.createElement("button");
     dlt_btn.innerHTML = "X";
+    $(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
     //console.log();
     //dlt_btn.setAttribute("onclick","dlt_parent()");
 
@@ -90,6 +96,12 @@ function sunadd() {
 
     var dlt_btn = document.createElement("button");
     dlt_btn.innerHTML = "X";
+    $(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
     //console.log();
     //dlt_btn.setAttribute("onclick","dlt_parent()");
 
@@ -166,6 +178,12 @@ function monadd() {
 
     var dlt_btn = document.createElement("button");
     dlt_btn.innerHTML = "X";
+    $(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
     //console.log();
     //dlt_btn.setAttribute("onclick","dlt_parent()");
 
@@ -246,6 +264,12 @@ function tueadd() {
 
     var dlt_btn = document.createElement("button");
     dlt_btn.innerHTML = "X";
+    $(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
     //console.log();
     //dlt_btn.setAttribute("onclick","dlt_parent()");
 
@@ -325,6 +349,12 @@ function wedadd() {
 
     var dlt_btn = document.createElement("button");
     dlt_btn.innerHTML = "X";
+    $(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
     //console.log();
     //dlt_btn.setAttribute("onclick","dlt_parent()");
 

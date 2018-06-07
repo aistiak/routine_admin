@@ -22,3 +22,4 @@ function updateOfflineStatus()
     $("#live_hint").css("color",
     "red");
 }
+

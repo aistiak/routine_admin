@@ -89,6 +89,12 @@ for(var i = 1 ; i<=periods.length ; i++){
 	
 	var dlt_btn = document.createElement("button");
 	dlt_btn.innerHTML = "X";
+	$(dlt_btn).css("opacity","0");
+    $(dlt_btn).hover(function(){
+         $(this).fadeTo(1,1);
+    },function(){
+        $(this).fadeTo(1,0);
+    });
 	//console.log();
         //dlt_btn.setAttribute("onclick","dlt_parent()");
 	

@@ -1,3 +1,11 @@
+#days_div{
+   margin-top: 200dp;
+}
+form {
+
+    padding: 3px ;
+}
+
 .demo {
     padding: 5px;
 }
@@ -13,7 +21,7 @@
 
 #status {
     position: absolute;
-    top: 0px;
+    top: 20px;
     right: 50px;
 }
 
@@ -23,7 +31,7 @@
 
 #live_hint {
     position: absolute;
-    top: 20px;
+    top: 30px;
     right: 50px;
 }
 

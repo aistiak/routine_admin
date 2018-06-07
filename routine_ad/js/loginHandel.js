@@ -27,6 +27,7 @@ $(document).ready(function () {
                 if (data == user_val && data != "") {
                     $("#main").show();
                     $("#login").hide();
+                    $("#live_hint").html("");
                 } else {
 
                     $("#warn").html("user or password is  incorrect ");
