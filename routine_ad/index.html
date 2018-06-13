@@ -48,10 +48,12 @@
 	</div>
 	<div id="main">
 
+		<div id="status" style="color:#008000">User is online</div>
+		<div id="live_hint"></div>
 		<div class="header" id="headerid">
-
-			<div id="status" style="color:green">User is online</div>
-			<div id="live_hint"></div>
+		   
+			<p id="preview"><a  href="myTable.html" target="_blank">preview</a></p>
+			
 			<center>
 				<button type="button" id="save_all">save</button>
 			</center>
@@ -126,7 +128,7 @@
 	<script>
 
 
-			//window.onscroll = function () { myFunction() };
+			
 	
 			var header = document.getElementById("headerid");
 	
@@ -135,15 +137,7 @@
 			header.classList.add("sticky");
 	
 	
-			function myFunction() {
-				if (window.pageYOffset >= sticky) {
-	
-				} else {
-	
-					//header.classList.remove("sticky");
-				}
-			}
-	
+			
 		</script>
 		<style>
 		   	.header {

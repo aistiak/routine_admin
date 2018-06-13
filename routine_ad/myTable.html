@@ -1,0 +1,323 @@
+<html>
+
+<head>
+
+	<title>MyTable</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="js/saveall.js" type="text/javascript"></script>
+	<script src="js/handelSemChange.js" type="text/javascript"></script>
+	<script src="js/netStatus.js" type="text/javascript"></script>
+	<script src="js/inputFieldChange.js" type="text/javascript"> </script>
+	<script src="js/util.js" type="text/javascript"></script>
+	<script src="js/urls.js" type="text/javascript"></script>
+	<script src="js/addBtnHandel.js"></script>
+	<script src="js/deleteBtn.js"></script>
+	<script src="js/loginHandel.js"></script>
+	<script src="loader.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+
+	<div class="container">
+		<h1>SATURDAY</h1>
+
+		<table class="table">
+
+
+			<thead>
+				<tr>
+
+					<th>#Sem</th>
+					<th>8.00-5.50</th>
+					<th>9.00-9.50</th>
+					<th>10.00-10.50</th>
+					<th>11.00-11.50</th>
+					<th>12.00-12.50</th>
+					<th>01.00-01.50</th>
+					<th>02.00-02.50</th>
+					<th>03.00-03.50</th>
+					<th>04.00-04.50</th>
+					<th>05.00-05.50</th>
+
+				</tr>
+			</thead>
+			<tbody id="sat-table-body">
+
+			</tbody>
+		</table>
+
+		<!-- sunday -->
+		<h1>SUNDAY</h1>
+
+		<table class="table">
+
+
+			<thead>
+				<tr>
+					<th>#Sem</th>
+					<th>9.00-9.50</th>
+					<th>10.00-10.50</th>
+					<th>11.00-11.50</th>
+					<th>12.00-12.50</th>
+					<th>01.00-01.50</th>
+					<th>02.00-02.50</th>
+					<th>03.00-03.50</th>
+					<th>04.00-04.50</th>
+					<th>05.00-05.50</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td id="sem-1-slot-1"> </td>
+					<td id="sem-1-slot-2"> </td>
+					<td id="sem-1-slot-3"> </td>
+					<td id="sem-1-slot-4"> </td>
+					<td id="sem-1-slot-5"> </td>
+					<td id="sem-1-slot-6"> </td>
+					<td id="sem-1-slot-7"> </td>
+					<td id="sem-1-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>2</td>
+					<td id="sem-2-slot-1"> </td>
+					<td id="sem-2-slot-2"> </td>
+					<td id="sem-2-slot-3"> </td>
+					<td id="sem-2-slot-4"> </td>
+					<td id="sem-2-slot-5"> </td>
+					<td id="sem-2-slot-6"> </td>
+					<td id="sem-2-slot-7"> </td>
+					<td id="sem-2-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>5</td>
+				</tr>
+
+
+
+			</tbody>
+		</table>
+		<!-- monday -->
+		<h1>MONDAY</h1>
+
+		<table class="table">
+
+
+			<thead>
+				<tr>
+					<th>#Sem</th>
+					<th>9.00-9.50</th>
+					<th>10.00-10.50</th>
+					<th>11.00-11.50</th>
+					<th>12.00-12.50</th>
+					<th>01.00-01.50</th>
+					<th>02.00-02.50</th>
+					<th>03.00-03.50</th>
+					<th>04.00-04.50</th>
+					<th>05.00-05.50</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td id="sem-1-slot-1"> </td>
+					<td id="sem-1-slot-2"> </td>
+					<td id="sem-1-slot-3"> </td>
+					<td id="sem-1-slot-4"> </td>
+					<td id="sem-1-slot-5"> </td>
+					<td id="sem-1-slot-6"> </td>
+					<td id="sem-1-slot-7"> </td>
+					<td id="sem-1-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>2</td>
+					<td id="sem-2-slot-1"> </td>
+					<td id="sem-2-slot-2"> </td>
+					<td id="sem-2-slot-3"> </td>
+					<td id="sem-2-slot-4"> </td>
+					<td id="sem-2-slot-5"> </td>
+					<td id="sem-2-slot-6"> </td>
+					<td id="sem-2-slot-7"> </td>
+					<td id="sem-2-slot-8"> </td>
+
+
+				</tr>
+
+
+
+
+			</tbody>
+		</table>
+		<!-- tue -->
+		<h1>TUESDAY</h1>
+
+		<table class="table">
+
+
+			<thead>
+				<tr>
+					<th>#Sem</th>
+					<th>9.00-9.50</th>
+					<th>10.00-10.50</th>
+					<th>11.00-11.50</th>
+					<th>12.00-12.50</th>
+					<th>01.00-01.50</th>
+					<th>02.00-02.50</th>
+					<th>03.00-03.50</th>
+					<th>04.00-04.50</th>
+					<th>05.00-05.50</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td id="sem-1-slot-1"> </td>
+					<td id="sem-1-slot-2"> </td>
+					<td id="sem-1-slot-3"> </td>
+					<td id="sem-1-slot-4"> </td>
+					<td id="sem-1-slot-5"> </td>
+					<td id="sem-1-slot-6"> </td>
+					<td id="sem-1-slot-7"> </td>
+					<td id="sem-1-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>2</td>
+					<td id="sem-2-slot-1"> </td>
+					<td id="sem-2-slot-2"> </td>
+					<td id="sem-2-slot-3"> </td>
+					<td id="sem-2-slot-4"> </td>
+					<td id="sem-2-slot-5"> </td>
+					<td id="sem-2-slot-6"> </td>
+					<td id="sem-2-slot-7"> </td>
+					<td id="sem-2-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>5</td>
+				</tr>
+
+
+
+			</tbody>
+		</table>
+		<!-- wed -->
+		<h1>WEDNESDAY</h1>
+
+		<table class="table">
+
+
+			<thead>
+				<tr>
+					<th>#Sem</th>
+					<th>9.00-9.50</th>
+					<th>10.00-10.50</th>
+					<th>11.00-11.50</th>
+					<th>12.00-12.50</th>
+					<th>01.00-01.50</th>
+					<th>02.00-02.50</th>
+					<th>03.00-03.50</th>
+					<th>04.00-04.50</th>
+					<th>05.00-05.50</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td id="sem-1-slot-1"> </td>
+					<td id="sem-1-slot-2"> </td>
+					<td id="sem-1-slot-3"> </td>
+					<td id="sem-1-slot-4"> </td>
+					<td id="sem-1-slot-5"> </td>
+					<td id="sem-1-slot-6"> </td>
+					<td id="sem-1-slot-7"> </td>
+					<td id="sem-1-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>2</td>
+					<td id="sem-2-slot-1"> </td>
+					<td id="sem-2-slot-2"> </td>
+					<td id="sem-2-slot-3"> </td>
+					<td id="sem-2-slot-4"> </td>
+					<td id="sem-2-slot-5"> </td>
+					<td id="sem-2-slot-6"> </td>
+					<td id="sem-2-slot-7"> </td>
+					<td id="sem-2-slot-8"> </td>
+
+
+				</tr>
+				<tr>
+					<td>3</td>
+				</tr>
+				<tr>
+					<td>4</td>
+				</tr>
+				<tr>
+					<td>5</td>
+				</tr>
+
+
+
+			</tbody>
+		</table>
+
+
+	</div>
+	<div class="sub-list">
+		<ul>
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+			<li>D</li>
+			<li>E</li>
+		</ul>
+	</div>
+	<div class="t-list">
+		<ul>
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+			<li>D</li>
+			<li>E</li>
+		</ul>
+	</div>
+
+
+
+</body>
+
+</html>

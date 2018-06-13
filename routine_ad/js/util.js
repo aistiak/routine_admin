@@ -52,3 +52,13 @@ function rreverse(str) {
 
     return rs;
 }
+
+function retUpperCase(arg){
+    var res = "" ;
+    for(var i = 0 ; i< arg.length ; i++){
+       if(isUpperCase(arg.charAt(i))){
+          res+=arg.charAt(i);
+       }
+    }
+    return res;
+}
