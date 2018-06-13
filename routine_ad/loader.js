@@ -34,7 +34,7 @@ $(document).ready(function () {
             // selecting existing semesters 
             var existing_sem = []; // dynamic array 
             for (var i = 0; i < semester.length; i++) {
-                var check = (semester[i].day[0].period.length >= 1) || // sat
+                var check = (semester[i].day[0].period.length >= 1) || // arg
                     (semester[i].day[1].period.length >= 1) || // sun
                     (semester[i].day[2].period.length >= 1) || // mon
                     (semester[i].day[3].period.length >= 1) || // tue
@@ -52,92 +52,108 @@ $(document).ready(function () {
             //$("#data").html(txt);
             //$("#data").html(existing_sem.toString());
 
-            var sat_table = $("#sat-table-body");
+            
+            loadDataToTable(existing_sem,"sat",0);
+            loadDataToTable(existing_sem,"sun",1);
+            loadDataToTable(existing_sem,"mon",2);
+            loadDataToTable(existing_sem,"tue",3);
+            loadDataToTable(existing_sem,"wed",4);
+
+
+        });
+
+
+
+});
+
+function loadDataToTable(existing_sem,arg,argn){
+    var iid = "#"+arg+"-table-body";
+    var arg_table = $(iid);
 
 
 
             // create field
             for (var i = 0; i < existing_sem.length; i++) {
 
-                var sem_no = existing_sem[i].sem_no; ``
+                var sem_no = existing_sem[i].sem_no; 
                 var tr = document.createElement("tr");
                 var td;
                 var atr;
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-1";
+                atr = arg+"-sem-" + (i + 1) + "-slot-1";
                 td.setAttribute("id", atr);
                 td.innerHTML = sem_no;
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-2";
+                atr = arg+"-sem-" + (i + 1) + "-slot-2";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-3";
+                atr = arg+"-sem-" + (i + 1) + "-slot-3";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-4";
+                atr = arg+"-sem-" + (i + 1) + "-slot-4";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-5";
+                atr = arg+"-sem-" + (i + 1) + "-slot-5";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-6";
+                atr = arg+"-sem-" + (i + 1) + "-slot-6";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-7";
+                atr = arg+"-sem-" + (i + 1) + "-slot-7";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-8";
+                atr = arg+"-sem-" + (i + 1) + "-slot-8";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-9";
+                atr = arg+"-sem-" + (i + 1) + "-slot-9";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-10";
+                atr = arg+"-sem-" + (i + 1) + "-slot-10";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
                 td = document.createElement("td");
-                atr = "sat-sem-" + (i + 1) + "-slot-1";
+                atr = arg+"-sem-" + (i + 1) + "-slot-1";
                 td.setAttribute("id", atr);
                 td.innerHTML = "";
                 tr.appendChild(td);
 
 
 
-                sat_table.append(tr);
+                arg_table.append(tr);
             }
 
             // populate field with data
             for (var j = 0; j < existing_sem.length; j++) {
-                var periods = existing_sem[j].day[0].period; // sat periods
+                var periods = existing_sem[j].day[argn].period; // arg periods
 
                 // var numbers = str.match(/\d+/g).map(Number);
                 // console.log(periods.length);
@@ -152,7 +168,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-2").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-2").html(data);
 
 
                     } else if (time >= 9 && time < 10) { // slot 3
@@ -160,7 +176,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-3").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-3").html(data);
 
 
                     } else if (time >= 10 && time < 11) { // slot4
@@ -169,7 +185,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-4").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-4").html(data);
 
 
                     } else if (time >= 11 && time < 12) {//slot5
@@ -178,7 +194,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-5").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-5").html(data);
 
 
                     } else if (time > 1 && time >= 12) {//slot6
@@ -187,7 +203,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-6").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-6").html(data);
 
 
                     } else if (time >= 1 && time < 2) {//slot7
@@ -196,7 +212,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-7").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-7").html(data);
 
 
                     } else if (time >= 2 && time < 3) {//slot8
@@ -205,7 +221,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-8").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-8").html(data);
 
 
                     } else if (time >= 3 && time < 4) {//slot9
@@ -214,7 +230,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-9").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-9").html(data);
 
 
                     } else if (time >= 4 && time < 5) {//slot9
@@ -223,7 +239,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-10").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-10").html(data);
 
 
                     }
@@ -233,7 +249,7 @@ $(document).ready(function () {
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
-                        $("#sat-sem-" + (j + 1) + "-slot-11").html(data);
+                        $("#"+arg+"-sem-" + (j + 1) + "-slot-11").html(data);
                     }
 
 
@@ -246,16 +262,7 @@ $(document).ready(function () {
             }
 
 
-         
-
-
-
-
-        });
-
-
-
-});
+}
 
 function retUpperCase(arg) {
     var res = "";
