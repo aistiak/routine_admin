@@ -60,6 +60,10 @@ $(document).ready(function () {
             loadDataToTable(existing_sem,"wed",4);
 
 
+            getteachersName(existing_sem);
+            getSubCodes(existing_sem);
+
+
         });
 
 
@@ -160,16 +164,19 @@ function loadDataToTable(existing_sem,arg,argn){
                 var data = "";
                 for (var i = 0; i < periods.length; i++) {
 
-                    var arr = periods[i].time.match(/\d+/g).map(Number);
+                    var slot_flag ;
+                    var regx1 = /\d+/g; // for int numbers
+                    var regs2 = /[+-]?\d+(\.\d+)?/g; // for double numbers
+                    var arr = periods[i].time.match(regs2).map(Number);
                     var time = arr[0]; // start time 
-                    console.log(time);
+                    console.log(arr[0] +" to "+ arr[1]  );
                     if (time >= 8 && time < 9) {//slot2
 
                         data = periods[i].ccode + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-2").html(data);
-
+                        slot_flag = 2 ;
 
                     } else if (time >= 9 && time < 10) { // slot 3
 
@@ -177,6 +184,7 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-3").html(data);
+                        slot_flag = 3 ;
 
 
                     } else if (time >= 10 && time < 11) { // slot4
@@ -186,6 +194,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-4").html(data);
+                        
+                        slot_flag = 4 ;
 
 
                     } else if (time >= 11 && time < 12) {//slot5
@@ -196,6 +206,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-5").html(data);
 
+                        slot_flag = 5 ;
+
 
                     } else if (time > 1 && time >= 12) {//slot6
 
@@ -204,6 +216,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-6").html(data);
+
+                        slot_flag = 6 ;
 
 
                     } else if (time >= 1 && time < 2) {//slot7
@@ -214,6 +228,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-7").html(data);
 
+                        slot_flag = 7 ;
+
 
                     } else if (time >= 2 && time < 3) {//slot8
 
@@ -222,6 +238,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-8").html(data);
+
+                        slot_flag = 8 ;
 
 
                     } else if (time >= 3 && time < 4) {//slot9
@@ -232,6 +250,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-9").html(data);
 
+                        slot_flag = 9 ;
+
 
                     } else if (time >= 4 && time < 5) {//slot9
 
@@ -240,6 +260,8 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-10").html(data);
+
+                        slot_flag = 10 ;
 
 
                     }
@@ -250,9 +272,25 @@ function loadDataToTable(existing_sem,arg,argn){
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-11").html(data);
+
+                        slot_flag = 11 ;
                     }
 
+                    var start_time = arr[0] ; 
+                    var end_time = arr[1];
+                    (start_time >=1 && start_time<=6 )? start_time +=12 : start_time ;
+                    (end_time >=1 && end_time<=6 )? end_time+=12 : end_time ;
+                    var time_diff = Math.abs(end_time - start_time);
 
+                    if(time_diff>1){ // any period is longer then 1 slot 
+                       for(var t = 0 ; t<Math.floor(time_diff) ; t++){
+                          slot_flag += 1 ; 
+                          var atr = "#"+arg+"-sem-" + (j + 1) + "-slot-"+slot_flag ;
+                          $(atr).html("    - - -  ");
+                       }  
+                    }
+
+                    
 
 
 
@@ -261,9 +299,52 @@ function loadDataToTable(existing_sem,arg,argn){
 
             }
 
+            // teacher`s name in short 
+           
 
 }
 
+function getteachersName(existing_sem){
+    var teacher_name_arr = [];
+    for(var i = 0 ; i< existing_sem.length ; i++){
+        var sem = existing_sem[i] ;
+        var days = sem.day ;
+
+        for(var j = 0 ; j < days.length ;j++){
+           var periods = days[j].period ;
+           
+            for (var k = 0 ; k< periods.length ; k++){
+               teacher_name_arr.push(periods[k].tname); 
+               //console.log(periods[k].tname);
+            }
+        }
+
+        teacher_name_arr = Array.from(new Set(teacher_name_arr));
+        console.log(teacher_name_arr);
+    }
+
+}
+
+function getSubCodes(existing_sem){
+    var sub_code_arr = [];
+    for(var i = 0 ; i< existing_sem.length ; i++){
+        var sem = existing_sem[i] ;
+        var days = sem.day ;
+
+        for(var j = 0 ; j < days.length ;j++){
+           var periods = days[j].period ;
+           
+            for (var k = 0 ; k< periods.length ; k++){
+               sub_code_arr.push(periods[k].ccode + "  " + periods[k].sub_name); 
+               //console.log(periods[k].tname);
+            }
+        }
+
+        sub_code_arr = Array.from(new Set(sub_code_arr));
+        console.log(sub_code_arr);
+    }
+
+}
 function retUpperCase(arg) {
     var res = "";
     for (var i = 0; i < arg.length; i++) {
