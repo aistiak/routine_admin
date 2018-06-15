@@ -21,5 +21,6 @@ function updateOfflineStatus()
     $("#live_hint").html("changes will not be saved ");
     $("#live_hint").css("color",
     "red");
+    alert("Changes won`t be saved ");
 }
 

@@ -52,7 +52,7 @@ function satadd() {
     var st_time = document.createElement("input");
     st_time.type = "text";
     st_time.placeholder = "start time "
-    st_time.className = "demo";
+    st_time.className = "time_inp";
     temp = "sat-ul-start-time" + len;
     st_time.setAttribute("id", temp);
 
@@ -60,7 +60,7 @@ function satadd() {
     var end_time = document.createElement("input");
     end_time.type = "text";
     end_time.placeholder = "end time"
-    end_time.className = "demo";
+    end_time.className = "time_inp";
     temp = "sat-ul-end-time" + len;
     end_time.setAttribute("id", temp);
 
@@ -140,7 +140,7 @@ function sunadd() {
     var st_time = document.createElement("input");
     st_time.type = "text";
     st_time.placeholder = "start time "
-    st_time.className = "demo";
+    st_time.className = "time_inp";
     temp = "sun-ul-start-time" + len;
     st_time.setAttribute("id", temp);
 
@@ -148,7 +148,7 @@ function sunadd() {
     var end_time = document.createElement("input");
     end_time.type = "text";
     end_time.placeholder = "end time"
-    end_time.className = "demo";
+    end_time.className = "time_inp";
     temp = "sun-ul-end-time" + len;
     end_time.setAttribute("id", temp);
 
@@ -222,7 +222,7 @@ function monadd() {
     var st_time = document.createElement("input");
     st_time.type = "text";
     st_time.placeholder = "start time "
-    st_time.className = "demo";
+    st_time.className = "time_inp";
     temp = "mon-ul-start-time" + len;
     st_time.setAttribute("id", temp);
 
@@ -230,7 +230,7 @@ function monadd() {
     var end_time = document.createElement("input");
     end_time.type = "text";
     end_time.placeholder = "end time"
-    end_time.className = "demo";
+    end_time.className = "time_inp";
     temp = "mon-ul-end-time" + len;
     end_time.setAttribute("id", temp);
 
@@ -308,7 +308,7 @@ function tueadd() {
     var st_time = document.createElement("input");
     st_time.type = "text";
     st_time.placeholder = "start time "
-    st_time.className = "demo";
+    st_time.className = "time_inp";
     temp = "tue-ul-start-time" + len;
     st_time.setAttribute("id", temp);
 
@@ -316,7 +316,7 @@ function tueadd() {
     var end_time = document.createElement("input");
     end_time.type = "text";
     end_time.placeholder = "end time"
-    end_time.className = "demo";
+    end_time.className = "time_inp";
     temp = "tue-ul-end-time" + len;
     end_time.setAttribute("id", temp);
 
@@ -393,7 +393,7 @@ function wedadd() {
     var st_time = document.createElement("input");
     st_time.type = "text";
     st_time.placeholder = "start time "
-    st_time.className = "demo";
+    st_time.className = "time_inp";
     temp = "wed-ul-start-time" + len;
     st_time.setAttribute("id", temp);
 
@@ -401,7 +401,7 @@ function wedadd() {
     var end_time = document.createElement("input");
     end_time.type = "text";
     end_time.placeholder = "end time"
-    end_time.className = "demo";
+    end_time.className = "time_inp";
     temp = "wed-ul-end-time" + len;
     end_time.setAttribute("id", temp);
 

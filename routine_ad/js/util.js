@@ -1,14 +1,9 @@
 
-
+var alert_flag = 0 ;
 function getStartTime(a) {
     var b = '';
     for (var i = 0; i < a.length; i++) {
-        if ((a[i
-        ] >= '0' && a[i
-        ] <= '9') || a[i
-        ] == '.' || a[i
-        ] == ' ') b += a[i
-        ];
+        if ((a[i] >= '0' && a[i] <= '9') || a[i] == '.') b += a[i];
         else break;
     }
     return b;
@@ -17,15 +12,16 @@ function getStartTime(a) {
 function getEndTime(a) {
     var b = '';
     for (var i = a.length - 1; i >= 0; i--) {
-        if ((a[i
-        ] >= '0' && a[i
-        ] <= '9') || a[i
-        ] == '.' || a[i
-        ] == ' ') b += a[i
-        ];
+        if ((a[i] >= '0' && a[i] <= '9') || a[i] == '.') b += a[i];
         else break;
     }
     return reverseString(b);
+}
+
+function showWarning(){
+    $(document).ready(function(){
+        alert("changes wont be saved");
+    });
 }
 
 // from stack overflow 
@@ -53,12 +49,12 @@ function rreverse(str) {
     return rs;
 }
 
-function retUpperCase(arg){
-    var res = "" ;
-    for(var i = 0 ; i< arg.length ; i++){
-       if(isUpperCase(arg.charAt(i))){
-          res+=arg.charAt(i);
-       }
+function retUpperCase(arg) {
+    var res = "";
+    for (var i = 0; i < arg.length; i++) {
+        if (isUpperCase(arg.charAt(i))) {
+            res += arg.charAt(i);
+        }
     }
     return res;
 }

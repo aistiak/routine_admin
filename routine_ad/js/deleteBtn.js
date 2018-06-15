@@ -7,7 +7,8 @@ $(document).ready(function () {
             e.preventDefault();
             var idx = $(this).parent().index();
             $(this).parent().remove();
-            saveAll();
+           // saveAll();
+            $("#live_hint").html("Unsaved Changes");
             return false;
         });
 });

@@ -167,9 +167,11 @@ function loadDataToTable(existing_sem,arg,argn){
                     var slot_flag ;
                     var regx1 = /\d+/g; // for int numbers
                     var regs2 = /[+-]?\d+(\.\d+)?/g; // for double numbers
+                   
                     var arr = periods[i].time.match(regs2).map(Number);
                     var time = arr[0]; // start time 
                     console.log(arr[0] +" to "+ arr[1]  );
+                    
                     if (time >= 8 && time < 9) {//slot2
 
                         data = periods[i].ccode + "<br>" +

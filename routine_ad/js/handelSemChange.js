@@ -2,9 +2,10 @@ $(document).ready(function () {
 
 
 	$("#slect_sem").change(function () {
-
+		//alert("Changes will not be saved ");
+       
 		var selected_sem_no = $('#slect_sem').find(":selected").text();
-
+    
 
 		// todo 
 		// from head we have to get the json and initialize the list of periods 
@@ -26,20 +27,15 @@ $(document).ready(function () {
 				// console.log(obj);
 
 
-				populateListli("sat-ul", obj, selected_sem_no,
-					0);//
+				populateListli("sat-ul", obj, selected_sem_no,0);//
 
-				populateListli("sun-ul", obj, selected_sem_no,
-					1);//
+				populateListli("sun-ul", obj, selected_sem_no,1);//
 
-				populateListli("mon-ul", obj, selected_sem_no,
-					2);//
+				populateListli("mon-ul", obj, selected_sem_no,2);//
 
-				populateListli("tue-ul", obj, selected_sem_no,
-					3);//
+				populateListli("tue-ul", obj, selected_sem_no,3);//
 
-				populateListli("wed-ul", obj, selected_sem_no,
-					4);//
+				populateListli("wed-ul", obj, selected_sem_no,4);//
 			});
 	});
 
@@ -143,7 +139,7 @@ function populateListli(day_id, obj, selected_sem_no, day_idx) {
 		var st_time = document.createElement("input");
 		st_time.type = "text";
 		st_time.placeholder = "start time "
-		st_time.className = "demo";
+		st_time.className = "time_inp";
 		temp = day_id + "-start-time" + i;
 		st_time.setAttribute("id", temp);
 		st_time.value = getStartTime(periods[i - 1
@@ -155,9 +151,9 @@ function populateListli(day_id, obj, selected_sem_no, day_idx) {
 		var end_time = document.createElement("input");
 		end_time.type = "text";
 		end_time.placeholder = "end time"
-		end_time.className = "demo";
+		end_time.className = "time_inp";
 		temp = day_id + "-end-time" + i;
-		end_time.setAttribute("id", temp);
+		end_time.setAttribute("id", temp);		
 		end_time.value = getEndTime(periods[i - 1
 		].time);
 		//console.log("end time :" + reverseString("12.00"));
