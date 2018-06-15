@@ -59,9 +59,34 @@ $(document).ready(function () {
             loadDataToTable(existing_sem,"tue",3);
             loadDataToTable(existing_sem,"wed",4);
 
+            // teacher`s name in short 
 
-            getteachersName(existing_sem);
-            getSubCodes(existing_sem);
+            var sub_ul = document.getElementById("sub_list") ;
+            var teacher_ul = document.getElementById("teacher_list");
+            var teacher_list = getTeachersName(existing_sem);
+            var subject_list = getSubCodes(existing_sem);
+
+
+            for(var k = 0 ; k < subject_list.length ; k++){
+               var sub_li = document.createElement("li");
+               console.log("sub : "+subject_list[k]); 
+               sub_li.innerHTML = subject_list[k] ;
+               sub_ul.appendChild(sub_li);
+            }
+
+            
+            for(var k = 0 ; k < teacher_list.length ; k++){
+                var teacher_li = document.createElement("li");
+                console.log("teacher : "+teacher_list[k]); 
+                var str = retUpperCase(teacher_list[k]) + "  (" + teacher_list[k] + ")" ;
+                teacher_li.innerHTML = str ;                
+                teacher_ul.appendChild( teacher_li);
+             }
+
+
+
+
+           
 
 
         });
@@ -301,12 +326,12 @@ function loadDataToTable(existing_sem,arg,argn){
 
             }
 
-            // teacher`s name in short 
+            
            
 
 }
 
-function getteachersName(existing_sem){
+function getTeachersName(existing_sem){
     var teacher_name_arr = [];
     for(var i = 0 ; i< existing_sem.length ; i++){
         var sem = existing_sem[i] ;
@@ -321,9 +346,12 @@ function getteachersName(existing_sem){
             }
         }
 
-        teacher_name_arr = Array.from(new Set(teacher_name_arr));
-        console.log(teacher_name_arr);
     }
+
+    
+    teacher_name_arr = Array.from(new Set(teacher_name_arr));
+    // console.log(teacher_name_arr);
+     return teacher_name_arr ;
 
 }
 
@@ -342,9 +370,11 @@ function getSubCodes(existing_sem){
             }
         }
 
-        sub_code_arr = Array.from(new Set(sub_code_arr));
-        console.log(sub_code_arr);
+       
     }
+    sub_code_arr = Array.from(new Set(sub_code_arr));
+    //console.log(sub_code_arr);
+    return sub_code_arr ;
 
 }
 function retUpperCase(arg) {

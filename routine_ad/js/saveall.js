@@ -67,6 +67,8 @@ function validateTime() {
 
 function saveAll() {
 
+  alert_flag = 0 ;
+
   console.log("from saveall ");
   var list = document.getElementById("sat-ul");
 
