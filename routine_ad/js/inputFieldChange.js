@@ -6,7 +6,11 @@ $(document).ready(function(){
     $("#live_hint").html("");
     $(document).on("change paste keyup",
     "input", function () {
+        
+       
         unmark(); 
+        markOnChange();
+        
         $("#live_hint").html("unsaved changes");
         $("#live_hint").css("color",
             "red");
@@ -17,16 +21,31 @@ $(document).ready(function(){
 
 });
 
+function markOnChange(){
+
+    $(".time_inp").each(function(){
+        console.log("changed");
+        if(isNaN(this.value)){ // if not a number 
+           $(this).css({"background-color":"#778899"});
+           
+        }else{
+            $(this).css({"background-color":"white"});
+        }
+    });
+}
+
 function unmark() {
     //$("input").css({"background-color":"red"});
     $("input").each(function(){
   
-      if(isNaN(this.value)){
+      if(this.value.length != 0){
   
       
         // this.value = "set";
          $(this).css({"background-color":"white"});  
        
+      }else{
+         $(this).css({"background-color":"#f08080"});   
       }
     });
   }

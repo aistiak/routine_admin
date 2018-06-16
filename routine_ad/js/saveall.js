@@ -18,7 +18,7 @@ $(document).ready(function () {
       $("#live_hint").html("input filed empty");
       $("#live_hint").css("color",
         "red");
-      mark();
+      markOnSave();
       validateTime();
 
     }
@@ -26,7 +26,8 @@ $(document).ready(function () {
 
 });
 
-function mark() {
+function markOnSave() {
+  console.log("from mark fn");
   //$("input").css({"background-color":"red"});
   $("input").each(function () {
 
@@ -36,6 +37,9 @@ function mark() {
       // this.value = "set";
       $(this).css({ "background-color": "#f08080" });
 
+    }else{
+
+      
     }
   });
 
@@ -47,14 +51,14 @@ function mark() {
 function validateTime() {
 
 
-
+  // warning color change fot time and empty fields
   $(".time_inp").each(function () {
 
     if (this.value.length === 0 || isNaN(this.value)) { // if empty then red  and not a number 
 
       $(this).css({ "background-color": "#778899" });
 
-      $("#live_hint").html("input field can`t be empty <br>and time has to be number");
+      $("#live_hint").html("input field can`t be empty and time has to be number");
 
     } else { // if number then white 
 
@@ -69,7 +73,7 @@ function saveAll() {
 
   alert_flag = 0 ;
 
-  console.log("from saveall ");
+  
   var list = document.getElementById("sat-ul");
 
 
