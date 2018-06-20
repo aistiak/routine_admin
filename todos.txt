@@ -1,0 +1,4 @@
+add logout btn 
+sylte login 
+add password revocery 
+add print advantages to preview 
