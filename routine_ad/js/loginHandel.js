@@ -3,6 +3,7 @@ id_idx[0] = 0;
 
 $(document).ready(function () {
 
+
     
     $("#main").hide();
 
@@ -28,12 +29,20 @@ $(document).ready(function () {
                     $("#main").show();
                     $("#login").hide();
                     $("#live_hint").html("");
+                    $("#body").css("background-image","none");
+
+
+
                 } else {
 
                     $("#warn").html("user or password is  incorrect ");
                 }
             });
     });
+
+
+    // LogOut handeller 
+    
 
 
 
