@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    
 	
 	$("#slect_sem").change(function () {
 		//alert("Changes will not be saved ");

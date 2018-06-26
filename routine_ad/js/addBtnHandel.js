@@ -1,3 +1,10 @@
+$(document).ready(function(){
+
+    $(".addbtn").click(function(){
+        alert_flag = 1;
+    });
+});
+
 function satadd() {
 
     var temp;

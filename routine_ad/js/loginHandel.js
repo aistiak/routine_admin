@@ -1,6 +1,7 @@
 var id_idx = [];
 id_idx[0] = 0;
 
+
 $(document).ready(function () {
 
 
@@ -30,7 +31,7 @@ $(document).ready(function () {
                     $("#login").hide();
                     $("#live_hint").html("");
                     $("#body").css("background-image","none");
-
+                    alert_flag = 0 ;
 
 
                 } else {
