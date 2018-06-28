@@ -4,9 +4,9 @@
 
 <head>
 	<title> ICT ROUTINE</title>
-	<link href="mbstu.ico" rel="shortcut icon" />
+	<link href="img/mbstu.ico" rel="shortcut icon" />
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="css/drop.css"/>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -52,10 +52,21 @@
 		<div id="status" style="color:#008000">User is online</div>
 		<div id="live_hint"></div>
 		<div class="header" id="headerid">
-		   
+		  <!--- 
 			<p id="preview"><a  href="preview.html" target="_blank">preview</a></p>
 			<p id="logout"><a href="index.html">logout</a></p>
 			
+			-->
+			<div class="dropdown">
+					<button class="dropbtn">Options</button>
+					<div class="dropdown-content">
+					  <a href="preview.html" target="_blank">Preview</a>
+					  <a href="index.html" >Logout</a>
+					  <a href="#">Chnage Password</a>
+					</div>
+		     </div>
+		   
+
 			<center>
 				<button type="button" id="save_all">save</button>
 			</center>
