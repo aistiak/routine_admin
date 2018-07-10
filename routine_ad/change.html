@@ -1,19 +1,52 @@
 <html>
 
-    <head>
-        <title></title>
-        
-    </head>
-    <body>
-        <form action='php/chnagePass.php' method="POST">
-        <input type="text" name="oldpass" placeholder="Old Password"/>
-        <br>NEW :<br>
-        <input type="text" name="newUserName" placeholder="User Name"/>
-        <br>
-        <input type="password" name="newPass" placeholder="New Password" />
-        <br>
-        <input type="submit" value="submit" />
-        </form>
+<head>
+    <title></title>
 
-    </body>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/urls.js"></script>
+
+</head>
+
+<body>
+
+    <input id="oldpass" type="text" name="oldpass" placeholder="Old Password" />
+    <br>NEW :
+    <br>
+    <input id="newuser" type="text" name="newUserName" placeholder="User Name" />
+    <br>
+    <input id="newpass" type="password" name="newPass" placeholder="New Password" />
+    <br>
+    <button  id="submitBtn"> submit </button>
+
+</body>
+
+<script>
+
+    $("#submitBtn").click(function () {
+        var old_pass = $("#oldpass").val();
+        var new_user = $("#newuser").val();
+        var new_pass = $("#newpass").val();
+        console.log("old pass :" + old_pass.replace(/\s/g, '').length);
+        if (oldpass!="") {
+
+
+            $.post(CHANGE_PASS_URL,
+                {
+                    oldpass: old_pass,
+                    newUserName: new_user,
+                    newPass: new_pass
+                },
+                function (data, status) {
+                   //window.location.replace("index.html");
+                   console.log("not empty");
+                });
+        } else {
+             console.log("empty");
+        }
+    });
+
+
+</script>
+
 </html>
