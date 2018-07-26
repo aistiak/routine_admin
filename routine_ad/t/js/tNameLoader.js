@@ -53,7 +53,7 @@ $(document).ready(function () {
 
             }
             tNameList = getTeachersName(existing_sem);
-            console.log("name list : " + tNameList);
+          //  console.log("name list : " + tNameList);
 
 
             addTeachersNameToSelect(tNameList); // adding teachers name to select options 
@@ -62,19 +62,19 @@ $(document).ready(function () {
             $("#select_teacher").change(function () {
 
                 var selected_techer_name = $('#select_teacher').find(":selected").text();
-                console.log("selected teacher : " + selected_techer_name);
+               // console.log("selected teacher : " + selected_techer_name);
 
 
                 for (var i = 0; i < existing_sem.length; i++) {
                     // iterate through every semester 
                     var sem = existing_sem[i];
-                    console.log("sem : " + sem.sem_no);
+                   // console.log("sem : " + sem.sem_no);
 
                     for (var j = 0; j < sem.day.length; j++) {
 
                         var day = sem.day[j]; // take out days of week from a semster 
 
-                        console.log("day : " + day.day_name);
+                        //console.log("day : " + day.day_name);
 
 
                         for (var k = 0; k < day.period.length; k++) {
@@ -82,9 +82,9 @@ $(document).ready(function () {
                             var period = day.period[i]; // 
 
                             try {
-                              
+                                
                                 if (period.tname == selected_techer_name) {
-                                    console.log("sub : " + period.sub_name);
+                                    //console.log("sub : " + period.sub_name);
                                     // todo now 
                                     /*
                                        show teacher class detail  
@@ -126,7 +126,7 @@ function addTeachersNameToSelect(arg) {
         var ele = document.createElement("option");
         ele.value = arg[i];
         ele.text = arg[i];
-        console.log(arg[i]);
+      //  console.log(arg[i]);
         select.appendChild(ele);
     }
 }
