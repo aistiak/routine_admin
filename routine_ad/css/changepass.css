@@ -1,0 +1,18 @@
+
+#changeDiv {
+    position: fixed;
+    top: 35%;
+    left: 45%;
+    margin-top: -50px;
+    margin-left: -100px;
+  
+    
+}
+input {
+    padding: 5px ;
+    margin: 5px ;
+}
+button{
+    margin-top: 10px ;
+    
+}

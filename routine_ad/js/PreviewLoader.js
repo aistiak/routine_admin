@@ -69,7 +69,7 @@ $(document).ready(function () {
 
             for(var k = 0 ; k < subject_list.length ; k++){
                var sub_li = document.createElement("li");
-               console.log("sub : "+subject_list[k]); 
+              // console.log("sub : "+subject_list[k]); 
                sub_li.innerHTML = subject_list[k] ;
                sub_ul.appendChild(sub_li);
             }
@@ -77,7 +77,7 @@ $(document).ready(function () {
             
             for(var k = 0 ; k < teacher_list.length ; k++){
                 var teacher_li = document.createElement("li");
-                console.log("teacher : "+teacher_list[k]); 
+               // console.log("teacher : "+teacher_list[k]); 
                 var str = retUpperCase(teacher_list[k]) + "  (" + teacher_list[k] + ")" ;
                 teacher_li.innerHTML = str ;                
                 teacher_ul.appendChild( teacher_li);
@@ -195,11 +195,11 @@ function loadDataToTable(existing_sem,arg,argn){
                    
                     var arr = periods[i].time.match(regs2).map(Number);
                     var time = arr[0]; // start time 
-                    console.log(arr[0] +" to "+ arr[1]  );
+                    //console.log(arr[0] +" to "+ arr[1]  );
                     
                     if (time >= 8 && time < 9) {//slot2
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-2").html(data);
@@ -207,7 +207,7 @@ function loadDataToTable(existing_sem,arg,argn){
 
                     } else if (time >= 9 && time < 10) { // slot 3
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-3").html(data);
@@ -217,7 +217,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 10 && time < 11) { // slot4
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-4").html(data);
@@ -228,7 +228,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 11 && time < 12) {//slot5
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-5").html(data);
@@ -239,7 +239,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time > 1 && time >= 12) {//slot6
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-6").html(data);
@@ -250,7 +250,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 1 && time < 2) {//slot7
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-7").html(data);
@@ -261,7 +261,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 2 && time < 3) {//slot8
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-8").html(data);
@@ -272,7 +272,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 3 && time < 4) {//slot9
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-9").html(data);
@@ -283,7 +283,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     } else if (time >= 4 && time < 5) {//slot9
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-10").html(data);
@@ -295,7 +295,7 @@ function loadDataToTable(existing_sem,arg,argn){
                     else if (time >= 5 && time < 6) {//slot9
 
 
-                        data = periods[i].ccode + "<br>" +
+                        data = periods[i].sub_name + "<br>" +
                             retUpperCase(periods[i].tname) + "<br>" +
                             periods[i].room_no;
                         $("#"+arg+"-sem-" + (j + 1) + "-slot-11").html(data);
@@ -313,7 +313,7 @@ function loadDataToTable(existing_sem,arg,argn){
                        for(var t = 0 ; t<Math.floor(time_diff) ; t++){
                           slot_flag += 1 ; 
                           var atr = "#"+arg+"-sem-" + (j + 1) + "-slot-"+slot_flag ;
-                          $(atr).html("    - - -  ");
+                          $(atr).html("    - - - - - -  ");
                        }  
                     }
 

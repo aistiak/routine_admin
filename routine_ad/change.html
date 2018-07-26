@@ -2,49 +2,37 @@
 
 <head>
     <title></title>
-
+    <link rel="stylesheet" type="text/css" href="css/changepass.css" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/urls.js"></script>
+    <script src="js/passChange.js"></script>
 
 </head>
 
 <body>
-
-    <input id="oldpass" type="text" name="oldpass" placeholder="Old Password" />
+  <a href="index.html"> HOME</a>
+    <center>
+   
+ 
+    <div id="changeDiv">    
+            <p id="err_warning" >  </p>    
+    <input id="oldpass" type="text" name="oldpass" placeholder="Old Password" size="40" />
     <br>NEW :
     <br>
-    <input id="newuser" type="text" name="newUserName" placeholder="User Name" />
+    <input id="newuser" type="text" name="newUserName" placeholder="User Name"  size="40"/>
     <br>
-    <input id="newpass" type="password" name="newPass" placeholder="New Password" />
+    <input id="newpass" type="password" name="newPass" placeholder="New Password" size="40"  />
     <br>
     <button  id="submitBtn"> submit </button>
+    </div>
+    </center>
 
 </body>
 
 <script>
 
-    $("#submitBtn").click(function () {
-        var old_pass = $("#oldpass").val();
-        var new_user = $("#newuser").val();
-        var new_pass = $("#newpass").val();
-        console.log("old pass :" + old_pass.replace(/\s/g, '').length);
-        if (oldpass!="") {
-
-
-            $.post(CHANGE_PASS_URL,
-                {
-                    oldpass: old_pass,
-                    newUserName: new_user,
-                    newPass: new_pass
-                },
-                function (data, status) {
-                   //window.location.replace("index.html");
-                   console.log("not empty");
-                });
-        } else {
-             console.log("empty");
-        }
-    });
+   
+  
 
 
 </script>
